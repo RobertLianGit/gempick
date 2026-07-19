@@ -14,7 +14,7 @@ export default function HomePage() {
         <div className="hero-copy">
           <p className="eyebrow">你最Pick的G.E.M.邓紫棋歌曲</p>
           <h1>心跳<em>之间</em></h1>
-          <p className="hero-lead">找到你最后想留下的那一首，了解每一首歌曲背后的感觉</p>
+          <p className="hero-lead">先选出想带上的歌，再让它们两两相遇。一轮轮从两首中留下更 Pick 的那首，直到得到你的个人排行榜和最 Pick 的歌；沿途也会了解每首歌背后的故事。</p>
           <div className="button-row">
             <a href="./select/" className="button button-primary button-large">开始选择 <span>↗</span></a>
             <a href="./about/" className="button button-secondary">先看看怎么玩</a>
@@ -37,8 +37,8 @@ export default function HomePage() {
         <div className="steps-grid">
           {[
             ["01", "带上你愿意留下的专辑", "起点十首已经替你准备好；接下来可以按专辑逐首挑选，也可以整张加入。"],
-            ["02", "让歌曲开始相遇", "生成一次稳定的相遇顺序；有些歌先见面，有些歌稍后登场。"],
-            ["03", "一次次选择，直到留下你最Pick的那首歌", "不熟悉就先去音乐平台听听。你的每次选择都会在本机保存。"],
+            ["02", "让歌曲两两相遇", "每次面对两首歌，留下这一刻更想继续带走的那首；有些歌先见面，有些歌稍后登场。"],
+            ["03", "一轮轮选到最后", "直到得到你的个人排行榜和最 Pick 的歌。不熟悉就先去音乐平台听听，每次选择都会在本机保存。"],
           ].map(([number, title, copy]) => (
             <article className="step-card" key={number}>
               <span className="step-number mono">{number}</span>
@@ -53,8 +53,8 @@ export default function HomePage() {
       <section className="page-shell result-preview-section">
         <div className="result-preview-copy">
           <p className="eyebrow">最后会得到什么？</p>
-          <h2>一张属于你的<br />音乐旅程结果。</h2>
-          <p>走完整段选择后，你会看到最后留下的那一首、最后一次相遇，以及它沿途经过的每一次选择。这不是哪首歌“最好”，只是这一刻，你最想留下它。</p>
+          <h2>一份属于你的<br />个人歌曲排行榜。</h2>
+          <p>你会从一组候选歌开始，让它们逐对相遇、一轮轮做选择。走完整段旅程后，不只会得到最 Pick 的那一首，还会看到覆盖所有候选歌的个人排行榜和完整选择过程。</p>
           <a href="./select/" className="text-link text-link-large">开始我的选择 →</a>
         </div>
         <article className="result-preview-card" aria-label="结果页效果示例">
