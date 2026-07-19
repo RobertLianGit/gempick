@@ -1,0 +1,12 @@
+node_modules/
+.next/
+out/
+coverage/
+.DS_Store
+*.log
+*.tsbuildinfo
+
+# Keep personal drafts and generated review assets local.
+outputs/*
+!outputs/文案控制表.numbers
+!outputs/文案控制表.xlsx

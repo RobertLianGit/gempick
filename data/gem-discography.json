@@ -1,0 +1,455 @@
+{
+  "schema_version": "1.0.0",
+  "artist": {
+    "name_zh": "邓紫棋",
+    "name_zh_hant": "鄧紫棋",
+    "stage_name": "G.E.M.",
+    "legal_name_romanized": "Gloria Tang Sze-wing",
+    "as_of": "2026-07-19"
+  },
+  "editorial_policy": {
+    "scope": "正式录音室专辑、重录专辑、EP，以及补充的精选/现场/单曲索引",
+    "track_description": "逐曲简介为编辑整理的主题与叙事概述，不是歌词转载；涉及作品设定时优先依据官方艺人网站、Apple Music编辑文案、唱片公司资料与公开发行目录交叉核对。",
+    "edition_rule": "同一作品的不同语言、现场、混音或重录版本作为同一作品的发行版本记录，只有有独立内容时才单独列为发行。"
+  },
+  "releases": [
+    {
+      "id": "gem-2008",
+      "title": "G.E.M.",
+      "title_en": "G.E.M.",
+      "release_type": "ep",
+      "release_date": "2008-10-15",
+      "label": "蜂鸟音乐 / 丰华唱片",
+      "language": ["粤语", "国语"],
+      "introduction": "邓紫棋的同名出道 EP，收录三首粤语歌与两首国语歌，以青春、暗恋、失恋和自我确认建立她早期的创作形象；《Where Did U Go》是其中最具代表性的作品。",
+      "tracks": [
+        {"position": 1, "title": "等一个他", "title_en": "Waiting for Him", "description": "以等待和想象描绘少女对理想对象的期待，语气轻盈而带有校园感。"},
+        {"position": 2, "title": "Where Did U Go", "description": "面对关系突然失去回应的追问，记录初恋结束后的失落与不解。"},
+        {"position": 3, "title": "回忆的沙漏", "title_en": "Sandglass", "description": "把时间比作不断流逝的沙漏，回望一段感情留下的记忆与遗憾。"},
+        {"position": 4, "title": "爱现在的我", "title_en": "Love Me As I Am", "description": "从讨好他人转向接纳自我，表达希望被真实地爱与理解。"},
+        {"position": 5, "title": "睡公主", "title_en": "Sleeping Beauty", "description": "以童话公主等待爱情为意象，写出青涩暗恋与不敢表白的心情。"}
+      ],
+      "sources": [
+        "https://cn.iamgem.com/",
+        "https://music.apple.com/cn/artist/%E9%82%93%E7%B4%AB%E6%A3%8B/425208570",
+        "https://zh.wikipedia.org/wiki/G.E.M._%28%E8%BF%B7%E4%BD%A0%E5%B0%88%E8%BC%AF%29"
+      ]
+    },
+    {
+      "id": "18-2009",
+      "title": "18...",
+      "title_en": "18...",
+      "release_type": "studio_album",
+      "release_date": "2009-10-27",
+      "label": "蜂鸟音乐 / 丰华唱片",
+      "language": ["粤语", "国语", "英语"],
+      "introduction": "作为邓紫棋的音乐成年礼，《18...》以个人生活、爱情体验和成长感悟为创作素材，记录从少女走向成年阶段的敏锐蜕变；Apple Music资料指出，专辑核心歌曲大多由她亲自创作。",
+      "edition_notes": "不同地区版本曲目略有差异；下列为主版本与常见加收曲目合并索引。",
+      "tracks": [
+        {"position": 1, "title": "All About U", "description": "以直白的英文流行表达赞美恋爱对象，呈现全心投入一段关系的甜蜜。"},
+        {"position": 2, "title": "Game Over", "description": "把感情比作一场已经结束的游戏，表达看清关系终点后的决绝。"},
+        {"position": 3, "title": "想讲你知", "title_en": "Want to Tell You", "description": "想把未说出口的心事交给对方，核心是沟通、坦白和挽回距离。"},
+        {"position": 4, "title": "A.I.N.Y. 爱你", "title_en": "Although I Needed You", "description": "描写深爱之后仍无法放下的痛楚，是专辑中最具撕裂感的失恋作品之一。"},
+        {"position": 5, "title": "Mascara 烟熏妆", "description": "以妆容和舞台感隐喻情绪伪装，写出表面镇定、内心流泪的反差。"},
+        {"position": 6, "title": "我不懂爱", "description": "承认自己面对爱情时的无知和不确定，保留了年轻创作者的坦率。"},
+        {"position": 7, "title": "塞纳河", "title_en": "Seine River", "description": "借巴黎与塞纳河的浪漫意象，描绘一段带有距离感和电影感的爱情回忆。"},
+        {"position": 8, "title": "意式恋爱", "title_en": "Italian Love", "description": "用轻快、异国化的想象包装恋爱憧憬，呈现俏皮而梦幻的情感色彩。"},
+        {"position": 9, "title": "G.E.M. Get Everybody Moving", "description": "以舞台宣言和自我介绍确立 G.E.M. 的音乐身份，强调让听众被音乐带动。"},
+        {"position": 10, "title": "18", "description": "以柔和钢琴写下成年时刻的期许、感谢和自我确认，是整张专辑的成长落点。"},
+        {"position": 11, "title": "Where Did U Go 2.0", "title_en": "Where Did U Go 2.0 (Sam Vahdat Remix)", "description": "对出道 EP 同名作品的重新编排版本，将初恋结束后的疑问转化为更成熟的回望。", "version": "bonus_remix"},
+        {"position": 12, "title": "Mascara 烟熏妆 Glossy Version", "description": "《Mascara 烟熏妆》的特别版本，延续关于外在妆容与内心情绪反差的主题。", "version": "bonus_version"},
+        {"position": 13, "title": "食烟饮酒讲粗口", "description": "与林海峰合作的加收曲，以口语化和带有社会观察的方式呈现成年世界的复杂与不修饰。", "version": "bonus_collaboration"}
+      ],
+      "sources": [
+        "https://music.apple.com/mo/album/18/538446710",
+        "https://zh.wikipedia.org/wiki/%E9%84%A7%E7%B4%AB%E6%A3%8B%E9%9F%B3%E6%A8%82%E4%BD%9C%E5%93%81%E5%88%97%E8%A1%A8"
+      ]
+    },
+    {
+      "id": "mysecret-2010",
+      "title": "MySecret",
+      "release_type": "studio_album",
+      "release_date": "2010-10-28",
+      "label": "蜂鸟音乐 / 丰华唱片",
+      "language": ["国语", "英语"],
+      "introduction": "第二张录音室专辑，以秘密、成长、失恋后的恢复和对自我声音的寻找为主线，延续邓紫棋早期的流行抒情，也加入更鲜明的节奏与舞曲表达。",
+      "tracks": [
+        {"position": 1, "title": "One Button", "description": "用一个按键的轻巧意象谈论关系中的控制、选择与欲望，带有玩味的流行质感。"},
+        {"position": 2, "title": "Good to be Bad", "description": "暂时放下乖巧形象，拥抱叛逆和不迎合，表达做真实自己的爽快。"},
+        {"position": 3, "title": "Get Over You", "description": "从旧情中抽身并重新找回生活节奏，主题是告别、恢复和自我重建。"},
+        {"position": 4, "title": "美好的旧时光 In My Heart", "description": "回望曾经的美好岁月，即使关系已经改变，记忆仍然值得珍惜。"},
+        {"position": 5, "title": "寂寞星球的玫瑰 The Rose", "description": "在孤独世界里守护柔软与美好，用玫瑰象征即使受伤仍然愿意绽放的心。"},
+        {"position": 6, "title": "The Voice Within", "description": "鼓励人听见内心真正的声音，在外界期待与自我选择之间建立信念。"},
+        {"position": 7, "title": "我的秘密 MySecret", "description": "以秘密作为爱情的入口，写下暗恋、试探和不愿轻易说破的心动。"},
+        {"position": 8, "title": "末日 The End", "description": "把世界末日设为情感极限，表达在一切终结前仍想诚实面对爱。"},
+        {"position": 9, "title": "Twinkle II", "description": "以星光和闪烁感包装轻盈的恋爱想象，展现明亮、俏皮的一面。"},
+        {"position": 10, "title": "Say it Loud", "description": "鼓励把爱与立场大声说出来，强调表达、勇气和不再隐藏。"}
+      ],
+      "sources": [
+        "https://music.apple.com/us/album/mysecret/539453504?l=zh-Hans-CN",
+        "https://zh.wikipedia.org/wiki/%E9%84%A7%E7%B4%AB%E6%A3%8B%E9%9F%B3%E6%A8%82%E4%BD%9C%E5%93%81%E5%88%97%E8%A1%A8"
+      ]
+    },
+    {
+      "id": "xposed-2012",
+      "title": "Xposed",
+      "release_type": "studio_album",
+      "release_date": "2012-07-05",
+      "label": "蜂鸟音乐 / 丰华唱片 / Sony Music",
+      "language": ["国语", "粤语", "英语"],
+      "introduction": "专辑名取自 Exposed，核心是把自己剖开、面对创伤并完成自我疗愈；作品在摇滚、抒情与流行之间切换，既关注个人关系，也触及弱势、自由和存在感。",
+      "tracks": [
+        {"position": 1, "title": "WHAT HAVE U DONE", "description": "以摇滚姿态质问伤害与不公，为被压抑的一方发声，并保留对未来的期待。"},
+        {"position": 2, "title": "下一秒（我们就要死掉）", "title_en": "The Next Second", "description": "用末日般的紧迫感提醒人珍惜当下，在关系与生命的不确定中抓住此刻。"},
+        {"position": 3, "title": "Someday I'll Fly", "description": "把成长写成破茧而出的飞行，表达离开束缚、获得新生和追寻自由。"},
+        {"position": 4, "title": "泡沫", "title_en": "Bubble", "description": "以泡沫比喻爱情、承诺与美好幻想的脆弱，写出看见真相后的痛与清醒。"},
+        {"position": 5, "title": "潜意式的残酷", "description": "写爱情深处不易察觉的残酷，情绪细腻而带有压抑的拉扯。"},
+        {"position": 6, "title": "Oh Boy", "description": "以带有戏剧感的口吻面对恋爱中的惊讶、失望和情绪转折。"},
+        {"position": 7, "title": "After Tonight", "description": "在一个夜晚之后重新审视关系，表达告别旧情、迎接下一阶段的决心。"},
+        {"position": 8, "title": "失真", "title_en": "Distortion", "description": "描绘感情在记忆、误解和期待中逐渐变形，呈现无法还原的失真感。"},
+        {"position": 9, "title": "奇迹", "title_en": "Miracle", "description": "在低谷中仍相信爱与改变可能发生，用希望对抗现实的重量。"},
+        {"position": 10, "title": "不存在的存在", "description": "以哲学式视角讨论爱情的单向性：即使对方不在，情感仍可能占据一个人的全部世界。"}
+      ],
+      "sources": [
+        "https://music.apple.com/cn/album/xposed/541862703",
+        "https://zh.wikipedia.org/wiki/%E9%84%A7%E7%B4%AB%E6%A3%8B%E9%9F%B3%E6%A8%82%E4%BD%9C%E5%93%81%E5%88%97%E8%A1%A8"
+      ]
+    },
+    {
+      "id": "heartbeat-2015",
+      "title": "新的心跳",
+      "title_en": "Heartbeat",
+      "release_type": "studio_album",
+      "release_date": "2015-11-06",
+      "label": "蜂鸟音乐 / Sony Music",
+      "language": ["国语"],
+      "introduction": "邓紫棋第一张全词曲创作、全国语和全视听专辑。它把三年的起伏浓缩为十首作品，主题围绕成长、自我和解、逆境前行与重新获得力量。",
+      "tracks": [
+        {"position": 1, "title": "多远都要在一起", "title_en": "Long Distance", "description": "把距离当作对感情的考验，表达无论相隔多远仍想与爱的人并肩。"},
+        {"position": 2, "title": "再见", "title_en": "Goodbye", "description": "用告别结束一段关系或一段旧的自己，在伤痛中恢复边界与尊严。"},
+        {"position": 3, "title": "新的心跳", "title_en": "Heartbeat", "description": "象征经历挫折后重新感受到生命和创作的脉搏，表达不服输的重生。"},
+        {"position": 4, "title": "来自天堂的魔鬼", "title_en": "Away", "description": "描写一种尚未真正开始便已错过的爱情，诱惑与危险以同一张面孔出现。"},
+        {"position": 5, "title": "盲点", "title_en": "Blind Spot", "description": "承认人在爱情和自我判断中都有看不见的盲区，主题是反思与清醒。"},
+        {"position": 6, "title": "单行的轨道", "title_en": "One-Way Track", "description": "把人生比作只能向前的单行轨道，强调即使孤独也要继续走下去。"},
+        {"position": 7, "title": "一路逆风", "title_en": "Against the Wind", "description": "在质疑、阻力和逆境中保持方向，用持续前进回应外界的风。"},
+        {"position": 8, "title": "于是", "title_en": "And Then", "description": "在经历关系与人生转折后回到平静，表达接受变化、放下执念的过程。"},
+        {"position": 9, "title": "瞬间", "title_en": "Instant", "description": "思考人生中无法重来的重要片刻，提醒人珍惜当下并让记忆留下意义。"},
+        {"position": 10, "title": "查克靠近", "title_en": "Chuck Close", "description": "以艺术家 Chuck Close 的肖像画为灵感，借远近视角讨论失去、看见与重新理解。"}
+      ],
+      "sources": [
+        "https://music.apple.com/cn/album/%E6%96%B0%E7%9A%84%E5%BF%83%E8%B7%B3/1053567923",
+        "https://music.apple.com/tw/album/%E6%96%B0%E7%9A%84%E5%BF%83%E8%B7%B3/1053567923",
+        "https://zh.wikipedia.org/wiki/%E9%84%A7%E7%B4%AB%E6%A3%8B%E9%9F%B3%E6%A8%82%E4%BD%9C%E5%93%81%E5%88%97%E8%A1%A8"
+      ]
+    },
+    {
+      "id": "happily-ever-after-2019",
+      "title": "童话的休止符",
+      "title_en": "Happily Ever After",
+      "release_type": "studio_album",
+      "release_date": "2019-05-03",
+      "label": "嘉音娱乐 / Sony Music",
+      "language": ["国语", "粤语"],
+      "introduction": "邓紫棋出道十周年的全创作作品，以《另一个童话》《毒苹果》《睡皇后》三部曲重新定义童话：爱情不一定永远幸福，但经历错过、诱惑与压力后仍可以拥有自己的结局。",
+      "tracks": [
+        {"position": 1, "title": "倒数", "title_en": "TIK TOK", "description": "在有限的时间里追问爱与生命的可能，鼓励珍惜当下和身边的人。"},
+        {"position": 2, "title": "错过不错", "title_en": "Rightfully Wrong", "description": "把错过从遗憾中解放出来，认为有些擦身而过也会成为人生正确的组成部分。"},
+        {"position": 3, "title": "另一个童话", "title_en": "My Fairytale", "description": "打破传统童话的爱情想象，宣告每个人都可以写出不依赖王子公主的故事。"},
+        {"position": 4, "title": "那一夜", "title_en": "Woke", "description": "在某个关键夜晚从幻想或关系中醒来，写出突然看清现实后的冲击。"},
+        {"position": 5, "title": "毒苹果", "title_en": "Fearless", "description": "把诱惑和伤害化作毒苹果，最终选择不再恐惧、夺回主动权。"},
+        {"position": 6, "title": "突然之间", "title_en": "Unexpectedly", "description": "捕捉情绪或关系突然转向的时刻，表现人生变化来临时的猝不及防。"},
+        {"position": 7, "title": "岩石里的花", "title_en": "Love Finds A Way", "description": "以岩石缝中盛开的花比喻不被看好的感情，表达在压力中仍然顽强生长。"},
+        {"position": 8, "title": "WHY", "description": "围绕关系中的疑问与不甘追问原因，呈现无法得到答案时的情绪回声。"},
+        {"position": 9, "title": "睡皇后", "title_en": "Queen G", "description": "呼应早期作品《睡公主》，以粤语写成童话续篇，讲述成长后的自我等待与觉醒。"}
+      ],
+      "sources": [
+        "https://zh.wikipedia.org/wiki/%E7%AB%A5%E8%A9%B1%E7%9A%84%E4%BC%91%E6%AD%A2%E7%AC%A6",
+        "https://music.apple.com/us/album/%E5%8F%A6%E4%B8%80%E5%80%8B%E7%AB%A5%E8%A9%B1-single/1422581993?l=zh-Hans-CN",
+        "https://hitoradio.com/newweb/16835album"
+      ]
+    },
+    {
+      "id": "city-zoo-2019",
+      "title": "摩天动物园",
+      "title_en": "City Zoo",
+      "release_type": "studio_album",
+      "release_date": "2019-12-27",
+      "label": "G Nation / Sony Music",
+      "language": ["国语", "英语"],
+      "introduction": "邓紫棋成立个人音乐工作室后的重要起点，也是她的第三张全创作专辑。专辑把摩天大楼里的城市人群比作动物，以犀利观察呈现文明与兽性、欲望与关怀、社会批判与温柔情感之间的拉扯。",
+      "tracks": [
+        {"position": 1, "title": "摩天动物园", "title_en": "City Zoo", "description": "以城市为动物园，观察人类在欲望、谎言和竞争中的动物性，并提醒人保持清醒。"},
+        {"position": 2, "title": "Fly Away", "description": "以昼伏夜行的猫头鹰象征孤独者，写出渴望被真正听见而非被敷衍安慰的心情。"},
+        {"position": 3, "title": "透明", "title_en": "Transparent", "description": "以变色龙般的透明状态描写为爱改变自己、逐渐失去原本色彩的关系。"},
+        {"position": 4, "title": "很久以后", "title_en": "Long After", "description": "以外冷内热的猫为意象，写离去之后仍然想念、却用坚强包裹伤口的爱情。"},
+        {"position": 5, "title": "WALK ON WATER", "description": "在逆境中保持信念，鼓励人不要被恐惧和失败阻止，继续向前走。"},
+        {"position": 6, "title": "萤火", "title_en": "Firefly", "description": "以萤火虫象征微小却持续的光，写给母亲，也表达对母爱与陪伴的感谢。"},
+        {"position": 7, "title": "灰狼", "title_en": "Grey Wolf", "description": "提醒人不要把世界简单分成好与坏，反思我们看到的事实和被隐藏的真相。"},
+        {"position": 8, "title": "差不多姑娘", "title_en": "Miss Similar", "description": "借孔雀隐喻追逐浮夸审美与从众竞争的社会，批评个性被磨平的现象。"},
+        {"position": 9, "title": "好想好想你", "title_en": "Missing You", "description": "以小鹿般的心动和思念描写暧昧期的牵挂，保留专辑中柔软浪漫的一面。"},
+        {"position": 10, "title": "别勉强", "title_en": "Don't Force It", "description": "面对不合适的关系选择放手，不再用勉强拥抱换取表面的完整。", "collaborators": ["周兴哲"]},
+        {"position": 11, "title": "多美丽", "title_en": "How Beautiful", "description": "以蝴蝶象征珍贵事物难以捕捉，表达对人生际遇和一路帮助过自己的人的感谢。"},
+        {"position": 12, "title": "句号", "title_en": "Full Stop", "description": "为一段长期关系、经历或争议划下句点，承认伤痕后重新把人生交还给自己。"},
+        {"position": 13, "title": "依然睡公主", "title_en": "Still Sleeping Beauty", "description": "重新编写早期《睡公主》的童话意象，展示成长后仍保有梦想但不再被动等待。"}
+      ],
+      "sources": [
+        "https://music.apple.com/cn/album/city-zoo/1491477494",
+        "https://sonymusic.com.tw/album/g-e-m-city-zoo/",
+        "https://zh.wikipedia.org/wiki/%E6%91%A9%E5%A4%A9%E5%8B%95%E7%89%A9%E5%9C%92",
+        "https://www.hk01.com/%E7%9C%BE%E6%A8%82%E8%BF%B7/415416/%E9%84%A7%E7%B4%AB%E6%A3%8B-%E6%91%A9%E5%A4%A9%E5%8B%95%E7%89%A9%E5%9C%92-6%E9%A6%96%E6%AD%8C%E7%9A%84%E6%95%85%E4%BA%8B-%E5%A4%B1%E5%8E%BB%E6%84%9F%E6%83%85%E6%99%82-%E9%80%A3%E8%87%AA%E5%B7%B1%E9%83%BD%E9%A8%99%E4%BA%86"
+      ]
+    },
+    {
+      "id": "revelation-2022",
+      "title": "启示录",
+      "title_en": "Revelation",
+      "release_type": "studio_album",
+      "release_date": "2022-09-23",
+      "label": "G Nation / Warner Music",
+      "language": ["国语"],
+      "introduction": "第八张创作专辑，以圣经故事、科幻世界观和 14 集音乐连续剧构成完整叙事。前半部“致天堂的信”是相对内敛的私人祷告，后半部“天堂的回信”完成觉醒与解惑，核心命题是爱、信仰与在时代阴霾中寻找希望。",
+      "story_sections": {"tracks_1_to_7": "致天堂的信", "tracks_8_to_14": "天堂的回信"},
+      "tracks": [
+        {"position": 1, "title": "少年与海", "title_en": "The Young Man and the Sea", "section": "致天堂的信", "description": "从一个醒来的少年开始，向世界和天堂发出关于生命、存在与为何醒来的沉重追问。"},
+        {"position": 2, "title": "HELL", "section": "致天堂的信", "description": "把爱情中的嫉妒、冲动和失控写成从天堂坠入地狱的瞬间，呈现欲望的窒息感。"},
+        {"position": 3, "title": "只有我和你的地方", "title_en": "Me & You", "section": "致天堂的信", "description": "在混乱世界中寻找只属于两个人的安全空间，表达亲密关系对人的庇护。"},
+        {"position": 4, "title": "你不是第一个离开的人", "title_en": "The Man Who Laughs", "section": "致天堂的信", "description": "直面失去与离开，提醒自己离别并非独一无二，也不等于人生从此失去意义。"},
+        {"position": 5, "title": "不想回家", "title_en": "Don't Want to Go Home", "section": "致天堂的信", "description": "描写身处熟悉世界却无法获得归属的漂泊感，表达逃离现实和寻找安身之处的愿望。"},
+        {"position": 6, "title": "冰河时代", "title_en": "Ice Age", "section": "致天堂的信", "description": "以冰封的时代象征关系与世界的冷却，写人在寒冷中等待重新融化的可能。"},
+        {"position": 7, "title": "受难曲", "title_en": "Passion", "section": "致天堂的信", "description": "把痛苦、牺牲和信仰放在同一首前卫实验作品中，表达穿过苦难仍不放弃爱的决心。"},
+        {"position": 8, "title": "GLORIA", "section": "天堂的回信", "description": "以邓紫棋的英文名 Gloria 为核心，象征从黑暗中重新被光照见、找回身份与荣耀。"},
+        {"position": 9, "title": "老人和海", "title_en": "The Old Man and the Sea", "section": "天堂的回信", "description": "回应前面的少年与海，以更成熟的生命视角谈坚持、孤独、失败和仍然出海的勇气。"},
+        {"position": 10, "title": "FIND YOU", "section": "天堂的回信", "description": "在迷失、分离和跨越世界之后寻找重要的人，也寻找真正的自己。"},
+        {"position": 11, "title": "离心力", "title_en": "Centrifugal Force", "section": "天堂的回信", "description": "用离心力比喻关系和世界把人推远的力量，同时寻找能够重新把彼此拉回来的爱。"},
+        {"position": 12, "title": "让世界暂停一分钟", "title_en": "Pause the World", "section": "天堂的回信", "description": "在高速、焦虑和灾难不断的时代请求片刻停顿，让人重新听见自己和彼此。"},
+        {"position": 13, "title": "夜的尽头", "title_en": "The End of the Night", "section": "天堂的回信", "description": "相信漫长黑夜终会结束，以恢宏声场表达从绝望走向光明和安慰。"},
+        {"position": 14, "title": "天空没有极限", "title_en": "Sky Is No Limit", "section": "天堂的回信", "description": "作为启示之旅的终章，表达不再怀疑、相信爱与未来无边的觉醒感。"}
+      ],
+      "sources": [
+        "https://cn.iamgem.com/",
+        "https://music.apple.com/cn/album/%E5%90%AF%E7%A4%BA%E5%BD%95/1641502284",
+        "https://music.apple.com/tw/album/%E5%90%AF%E7%A4%BA%E9%8C%84/1641502284",
+        "https://zh.wikipedia.org/wiki/%E5%95%93%E7%A4%BA%E9%8C%84_%28%E9%84%A7%E7%B4%AB%E6%A3%8B%E5%B0%88%E8%BC%AF%29"
+      ]
+    },
+    {
+      "id": "revelacion-2023",
+      "title": "Revelación",
+      "title_zh": "启示录（西语版）",
+      "release_type": "localized_companion_album",
+      "release_date": "2023-07-10",
+      "label": "G Nation / Warner Music",
+      "language": ["西班牙语"],
+      "introduction": "《启示录》的西班牙语对应版本，保留原专辑 14 首歌的故事顺序和核心主题，让同一套关于爱、信仰、黑暗与觉醒的叙事进入西语表达。",
+      "tracks": [
+        {"position": 1, "title": "El Joven Y El Mar", "maps_to": "少年与海", "description": "西语重唱版，延续少年向世界发问、寻找生命答案的开场。"},
+        {"position": 2, "title": "Hell", "maps_to": "HELL", "description": "西语重唱版，表现爱情中嫉妒和冲动把人推向黑暗的瞬间。"},
+        {"position": 3, "title": "Me & You", "maps_to": "只有我和你的地方", "description": "西语重唱版，表达在混乱世界中守护两人私密空间。"},
+        {"position": 4, "title": "El Hombre Que Ríe", "maps_to": "你不是第一个离开的人", "description": "西语重唱版，围绕离开、失去和继续生活展开。"},
+        {"position": 5, "title": "One More Night", "maps_to": "不想回家", "description": "西语重唱版，保留漂泊、逃离与想再停留一晚的情绪。"},
+        {"position": 6, "title": "La Edad De Hielo", "maps_to": "冰河时代", "description": "西语重唱版，以冰封意象表达世界与关系的冷却。"},
+        {"position": 7, "title": "Pasión", "maps_to": "受难曲", "description": "西语重唱版，延续痛苦、牺牲与爱之间的信仰张力。"},
+        {"position": 8, "title": "Gloria", "maps_to": "GLORIA", "description": "西语重唱版，象征从黑暗中重新看见光、找回自身荣耀。"},
+        {"position": 9, "title": "El Viejo Y El Mar", "maps_to": "老人和海", "description": "西语重唱版，以成熟生命视角回应坚持与重新出发。"},
+        {"position": 10, "title": "Find You", "maps_to": "FIND YOU", "description": "西语版本保留寻找所爱之人和找回自我的主线。"},
+        {"position": 11, "title": "Fuerza Centrífuga", "maps_to": "离心力", "description": "西语重唱版，把关系被推远与爱重新拉近的力量并置。"},
+        {"position": 12, "title": "Un Momento", "maps_to": "让世界暂停一分钟", "description": "西语重唱版，呼吁在喧嚣时代为彼此保留片刻停顿。"},
+        {"position": 13, "title": "Yo Soy Eterno", "maps_to": "夜的尽头", "description": "西语重唱版，将穿越黑夜后的永恒感与希望推向高潮。"},
+        {"position": 14, "title": "Mira Hacia El Cielo", "maps_to": "天空没有极限", "description": "西语重唱版，作为终章继续表达抬头看天、相信未来无边。"}
+      ],
+      "sources": [
+        "https://music.apple.com/us/artist/%E9%82%93%E7%B4%AB%E6%A3%8B/425208570?l=zh-Hans-CN",
+        "https://zh.wikipedia.org/wiki/%E9%84%A7%E7%B4%AB%E6%A3%8B%E9%9F%B3%E6%A8%82%E4%BD%9C%E5%93%81%E5%88%97%E8%A1%A8"
+      ]
+    },
+    {
+      "id": "i-am-gloria-2025",
+      "title": "I AM GLORIA",
+      "release_type": "rerecorded_album",
+      "release_date": "2025-06-12",
+      "label": "G Nation / Sony Music Taiwan",
+      "language": ["国语", "粤语"],
+      "introduction": "邓紫棋首张重录专辑，收录 10 首重新诠释的代表作与 2 首 Bonus 经典。专辑把早期作品放入经历风雨后的声音里，主题从“熟悉的旋律”转向“重新夺回、重生与见光”。",
+      "tracks": [
+        {"position": 1, "title": "我的秘密（G.E.M.重生版）", "maps_to": "我的秘密 MySecret", "description": "以重录后的成熟声音重新讲述暗恋与秘密，让早期的心动获得新的回望。"},
+        {"position": 2, "title": "Where Did U Go（G.E.M.重生版）", "maps_to": "Where Did U Go", "description": "重新面对初恋结束后的失落与疑问，把青涩的不解唱成更有距离的自我理解。"},
+        {"position": 3, "title": "A.I.N.Y. 爱你（G.E.M.重生版）", "maps_to": "A.I.N.Y. 爱你", "description": "重录经典失恋作品，在经历之后重新进入爱而不得的酸涩和痛楚。"},
+        {"position": 4, "title": "泡沫（G.E.M.重生版）", "maps_to": "泡沫", "description": "重新诠释爱情幻象破裂的主题，把脆弱、清醒和重生放在同一条情绪线上。"},
+        {"position": 5, "title": "回忆的沙漏（G.E.M.重生版）", "maps_to": "回忆的沙漏", "description": "以时间流逝和记忆沉淀为核心，重新看待早年感情留下的痕迹。"},
+        {"position": 6, "title": "红蔷薇白玫瑰（G.E.M.重生版）", "description": "以红与白两种玫瑰对照复杂的爱与欲望，重新演绎她的中文改编作品。"},
+        {"position": 7, "title": "画（G.E.M.重生版）", "maps_to": "画", "description": "用绘画作为爱情与记忆的隐喻，重录版强化了安静、细腻的凝视感。"},
+        {"position": 8, "title": "光年之外（G.E.M.重生版）", "maps_to": "光年之外", "description": "把跨越距离寻找相遇的浪漫重新唱出，加入经历之后更坚定的力量。"},
+        {"position": 9, "title": "睡公主（G.E.M.重生版）", "maps_to": "睡公主", "description": "回到早期的童话暗恋意象，以成年后的声音重新看待那个等待爱情的少女。"},
+        {"position": 10, "title": "天空没有极限（粤）", "maps_to": "天空没有极限", "description": "以粤语版本延续向天空抬头的终章精神，表达信心、未来和不设限的人生。"},
+        {"position": 11, "title": "后会无期（G.E.M.重生版）", "maps_to": "后会无期", "description": "重新演绎关于远行、告别与人生没有保证的主题，保留公路电影般的漂泊感。"},
+        {"position": 12, "title": "喜欢你（G.E.M.重生版）", "maps_to": "喜欢你", "description": "以重录版本重新唱出直接而热烈的喜欢，致敬 Beyond 经典并加入新的生命经验。"}
+      ],
+      "sources": [
+        "https://music.apple.com/hk/album/i-am-gloria/1818539834",
+        "https://zh.wikipedia.org/wiki/I_Am_Gloria",
+        "https://www.iwant-radio.com/showinformation.php?sisn=58432",
+        "https://musicbrainz.org/release/b5a14c90-241d-4248-b0ef-69ab58774839"
+      ]
+    },
+    {
+      "id": "looks-2016",
+      "title": "25 LOOKS",
+      "release_type": "ep",
+      "release_date": "2016-09-30",
+      "label": "蜂鸟音乐 / 丰华唱片",
+      "language": ["国语"],
+      "introduction": "为邓紫棋 25 岁推出的混音 EP，配合写真企划收录四首重新制作的舞曲/电子版本，重点在于把既有作品转换为更具节奏感的现场与派对听感。",
+      "tracks": [
+        {"position": 1, "title": "再见（Club Mix）", "description": "将告别主题转换为更强律动的俱乐部混音，保留决绝与释放感。", "version": "remix"},
+        {"position": 2, "title": "多远都要在一起（Dub Mix）", "description": "用 Dub 混音放大距离与坚持的空间感，让情感承诺更适合舞池和现场。", "version": "remix"},
+        {"position": 3, "title": "泡沫（PÀO MÒ Remix）", "description": "把爱情泡沫的脆弱主题改造成更具电子冲击力的版本。", "version": "remix"},
+        {"position": 4, "title": "瞬间（Dance Remix）", "description": "将关于时间与记忆的抒情作品重构为舞曲版本，突出瞬间消逝前的能量。", "version": "remix"}
+      ],
+      "sources": [
+        "https://zh.wikipedia.org/wiki/25_LOOKS",
+        "https://music.douban.com/subject/26884182/"
+      ]
+    },
+    {
+      "id": "my-fairytale-2018",
+      "title": "另一个童话",
+      "title_en": "My Fairytale",
+      "release_type": "ep",
+      "release_date": "2018-08-30",
+      "label": "蜂鸟音乐",
+      "language": ["国语"],
+      "introduction": "童话三部曲的序章，以轻电子和轻摇滚为框架，讨论有限时间里的爱、错过与重新定义童话。",
+      "tracks": [
+        {"position": 1, "title": "倒数", "title_en": "TIK TOK", "description": "在生命倒数中提醒人勇敢追寻爱，珍惜仍然拥有的时间。"},
+        {"position": 2, "title": "错过不错", "title_en": "Rightfully Wrong", "description": "把错过视为人生经验而非单纯遗憾，表达与过去和解的可能。"},
+        {"position": 3, "title": "另一个童话", "title_en": "My Fairytale", "description": "宣告童话不必遵循固定结局，每个人都可以写出属于自己的版本。"}
+      ],
+      "sources": [
+        "https://music.apple.com/us/album/%E5%8F%A6%E4%B8%80%E5%80%8B%E7%AB%A5%E8%A9%B1-single/1422581993?l=zh-Hans-CN",
+        "https://zh.wikipedia.org/wiki/%E7%AB%A5%E8%A9%B1%E7%9A%84%E4%BC%91%E6%AD%A2%E7%AC%A6"
+      ]
+    },
+    {
+      "id": "fearless-2018",
+      "title": "毒苹果",
+      "title_en": "Fearless",
+      "release_type": "ep",
+      "release_date": "2018-11-09",
+      "label": "蜂鸟音乐",
+      "language": ["国语"],
+      "introduction": "童话三部曲的中篇，把毒苹果作为诱惑、伤害和清醒的象征，音乐比序章更具戏剧性和攻击性。",
+      "tracks": [
+        {"position": 1, "title": "那一夜", "title_en": "Woke", "description": "在关键夜晚醒来，看清关系与幻想的裂缝。"},
+        {"position": 2, "title": "毒苹果", "title_en": "Fearless", "description": "识别诱惑中的危险，不再害怕失去，选择把主动权拿回自己手中。"},
+        {"position": 3, "title": "突然之间", "title_en": "Unexpectedly", "description": "记录变化毫无预警发生的瞬间，呈现感情从熟悉走向陌生的冲击。"}
+      ],
+      "sources": [
+        "https://zh.wikipedia.org/wiki/%E7%AB%A5%E8%A9%B1%E7%9A%84%E4%BC%91%E6%AD%A2%E7%AC%A6",
+        "https://zh.wikipedia.org/wiki/%E9%84%A7%E7%B4%AB%E6%A3%8B%E9%9F%B3%E6%A8%82%E4%BD%9C%E5%93%81%E5%88%97%E8%A1%A8"
+      ]
+    },
+    {
+      "id": "queen-g-2018",
+      "title": "睡皇后",
+      "title_en": "Queen G",
+      "release_type": "ep",
+      "release_date": "2018-12-28",
+      "label": "蜂鸟音乐",
+      "language": ["国语", "粤语"],
+      "introduction": "童话三部曲的终章，以《睡公主》的十年回声为起点，写在压力与不被看好中仍然生长的爱情，也让邓紫棋重新回到粤语创作。",
+      "tracks": [
+        {"position": 1, "title": "岩石里的花", "title_en": "Love Finds A Way", "description": "以岩石里的花比喻在舆论和现实压力中仍然顽强的感情。"},
+        {"position": 2, "title": "WHY", "description": "不断追问关系为何改变，保留无法释怀又必须继续前行的情绪。"},
+        {"position": 3, "title": "睡皇后", "title_en": "Queen G", "description": "作为《睡公主》的粤语续篇，写成长后的童话、自我等待与觉醒。"}
+      ],
+      "sources": [
+        "https://zh.wikipedia.org/wiki/%E7%AB%A5%E8%A9%B1%E7%9A%84%E4%BC%91%E6%AD%A2%E7%AC%A6",
+        "https://zh.wikipedia.org/wiki/%E9%84%A7%E7%B4%AB%E6%A3%8B%E9%9F%B3%E6%A8%82%E4%BD%9C%E5%93%81%E5%88%97%E8%A1%A8"
+      ]
+    },
+    {
+      "id": "time-2023",
+      "title": "T.I.M.E.",
+      "release_type": "ep",
+      "release_date": "2023-11-26",
+      "label": "Sony Music Taiwan",
+      "language": ["国语", "粤语"],
+      "introduction": "以翻唱、改编和重新填词为核心的焕新 EP，邓紫棋将综艺演出中的经典歌曲转化为自己的时间切片，主题集中在爱情、记忆、成长与人生选择。",
+      "tracks": [
+        {"position": 1, "title": "情人", "title_en": "Lover", "description": "重新演绎 Beyond 经典，把熟悉的粤语情歌唱出更成熟的情感重量。", "original_artist": "Beyond"},
+        {"position": 2, "title": "唯一", "title_en": "The Only", "description": "以邓紫棋的改编和演唱重新确认一段关系的独特性与不可替代。", "original_artist": "告五人"},
+        {"position": 3, "title": "李香兰", "title_en": "Lai Xianglan", "description": "重新面对经典作品中的时代、身份和无法实现的爱情，保留粤语歌的历史感。", "original_artist": "张学友"},
+        {"position": 4, "title": "11", "description": "通过改编把数字化、陪伴和关系记忆重新组织成一首温柔的流行作品。", "original_artist": "告五人"},
+        {"position": 5, "title": "你成为了谁的幸福", "title_en": "Whose Happiness Are You", "description": "重新填词后关注一个人如何成为另一个人的幸福，也包含对成长与离开的体会。", "original_artist": "欧阳娜娜"},
+        {"position": 6, "title": "海阔天空", "title_en": "Boundless Oceans Vast Skies", "description": "以粤语经典表达自由、理想和穿越低谷后的开阔，形成 EP 的情绪收束。", "original_artist": "Beyond"}
+      ],
+      "sources": [
+        "https://zh.wikipedia.org/wiki/T.I.M.E._%28%E9%84%A7%E7%B4%AB%E6%A3%8B%E5%B0%88%E8%BC%AF%29",
+        "https://zh.wikipedia.org/wiki/%E9%84%A7%E7%B4%AB%E6%A3%8B%E9%9F%B3%E6%A8%82%E4%BD%9C%E5%93%81%E5%88%97%E8%A1%A8"
+      ]
+    }
+  ],
+  "other_release_inventory": [
+    {
+      "title": "The Best of G.E.M. 2008-2012",
+      "release_type": "compilation",
+      "release_date": "2013-03-27",
+      "description": "出道早期作品精选，覆盖《G.E.M.》《18...》《MySecret》《Xposed》的代表曲目，并包含现场、混音和特别版本。",
+      "tracklist_reference": "https://zh.wikipedia.org/wiki/%E9%84%A7%E7%B4%AB%E6%A3%8B%E9%9F%B3%E6%A8%82%E4%BD%9C%E5%93%81%E5%88%97%E8%A1%A8"
+    },
+    {
+      "title": "Get Everybody Moving Concert 2011",
+      "release_type": "live_album",
+      "release_date": "2011-11-28",
+      "description": "早期个人演唱会现场发行，覆盖出道 EP 与前两张录音室专辑的曲目，并包含翻唱与舞台特别段落。",
+      "tracklist_reference": "https://zh.wikipedia.org/wiki/%E9%84%A7%E7%B4%AB%E6%A3%8B%E9%9F%B3%E6%A8%82%E4%BD%9C%E5%93%81%E5%88%97%E8%A1%A8"
+    },
+    {
+      "title": "G.E.M. X.X.X. Live",
+      "release_type": "live_album",
+      "release_date": "2013-11-13",
+      "description": "《Xposed》时期世界巡回演唱会现场，包含《泡沫》《A.I.N.Y.》《What Have U Done》等核心作品及 Live Piano Session 加收曲。",
+      "tracklist_reference": "https://zh.wikipedia.org/wiki/%E9%84%A7%E7%B4%AB%E6%A3%8B%E9%9F%B3%E6%A8%82%E4%BD%9C%E5%93%81%E5%88%97%E8%A1%A8"
+    }
+  ],
+  "standalone_and_featured_releases": [
+    {"year": 2013, "title": "偶尔", "english_title": "Sometimes", "type": "live_piano_single", "description": "以钢琴为核心的抒情现场版本，写成年人在关系中偶尔想念、偶尔退后的复杂心绪。"},
+    {"year": 2014, "title": "喜欢你", "english_title": "Like You", "type": "cover_single", "description": "邓紫棋对 Beyond 经典的高辨识度翻唱，直接而热烈地表达喜欢。", "original_artist": "Beyond"},
+    {"year": 2014, "title": "后会无期", "type": "ost_single", "description": "电影主题曲，以远行和告别表达青春的不确定与人生没有保证。", "work": "电影《后会无期》"},
+    {"year": 2014, "title": "手心的蔷薇", "type": "featured_single", "description": "与林俊杰合作的对唱作品，以蔷薇比喻爱情中的柔软、保护和伤痕。", "featured_artist": "林俊杰"},
+    {"year": 2015, "title": "你不是真正的快乐", "type": "cover_single", "description": "以更具戏剧张力的女声重新演绎关于伪装快乐与内心伤口的作品。", "original_artist": "五月天"},
+    {"year": 2016, "title": "给你的歌", "type": "live_piano_single", "description": "钢琴独唱式的告白，把想说的话整理成一封给重要之人的音乐信。"},
+    {"year": 2016, "title": "画", "type": "live_piano_single", "description": "以简约钢琴和人声重新呈现关于记忆、爱情与绘画隐喻的作品。"},
+    {"year": 2016, "title": "光年之外", "english_title": "Light Years Away", "type": "ost_single", "description": "电影主题曲，以光年距离象征跨越宇宙仍然相遇的浪漫与坚定。", "work": "电影《太空旅客》中国区主题曲"},
+    {"year": 2017, "title": "桃花诺", "type": "ost_single", "description": "古装剧片尾曲，以桃花、誓言和宿命表达跨越时间的情感。", "work": "电视剧《上古情歌》"},
+    {"year": 2017, "title": "心之焰", "type": "ost_single", "description": "以心中的火焰象征爱与坚持，在古装叙事中传达不灭的情感。", "work": "电视剧《楚乔传》"},
+    {"year": 2018, "title": "爱如意", "type": "ost_single", "description": "以如意和爱作为核心意象，写出奇幻世界中的选择、愿望与牺牲。", "work": "电影《阿修罗》"},
+    {"year": 2018, "title": "漂向北方", "type": "featured_single", "description": "与黄明志合作的现场/翻唱版本，聚焦离乡者、城市奋斗与寻找归属。", "featured_artist": "黄明志"},
+    {"year": 2019, "title": "句号", "english_title": "Full Stop", "type": "single", "description": "为一段长期经历划下句点，核心是从伤痕和争议中重新夺回自我。"},
+    {"year": 2019, "title": "Walk on Water", "type": "ost_single", "description": "面向逆境的鼓舞型作品，表达不放弃、继续走过困难的力量。", "work": "电影《终结者：黑暗命运》中文版主题曲"},
+    {"year": 2020, "title": "平凡天使", "english_title": "Angels", "type": "original_single", "description": "为抗疫时期创作的公益作品，歌颂普通人在危机中彼此守护的勇气。"},
+    {"year": 2020, "title": "孤独", "english_title": "Loneliness", "type": "original_single", "description": "把孤独写成一种需要被看见和理解的状态，而非必须隐藏的弱点。"},
+    {"year": 2021, "title": "平行世界", "type": "ost_single", "description": "在现实与想象的平行世界之间寻找真相、选择与爱的出口。", "work": "电影《刺杀小说家》主题曲"},
+    {"year": 2021, "title": "超能力", "type": "original_single", "description": "以超能力作为隐喻，写人在平凡生活里保护所爱、对抗困难的内在力量。"},
+    {"year": 2021, "title": "倒流时间", "type": "original_single", "description": "幻想让时间倒流以重访重要关系与人生片段，最终落回珍惜现在。"},
+    {"year": 2021, "title": "两个你", "type": "ost_single", "description": "以两个彼此映照的身份讨论选择、真相与情感羁绊。", "work": "电视剧《飞虎3壮志英雄》粤语主题曲"},
+    {"year": 2021, "title": "两个自己", "type": "ost_single", "description": "把自我分裂成两个角度，写人在理想、现实和关系中的挣扎。", "work": "电视剧《飞虎3壮志英雄》国语主题曲"},
+    {"year": 2022, "title": "Bang Bang", "type": "ost_single", "description": "电影动画中文版主题曲，以跳跃、俏皮的方式传递行动力和冒险感。", "work": "电影《小黄人大眼萌：神偷奶爸前传》中文版主题曲"},
+    {"year": 2023, "title": "情人", "type": "single", "description": "《T.I.M.E.》先行改编作品，以新编曲重新回应 Beyond 的经典爱情表达。", "original_artist": "Beyond"},
+    {"year": 2023, "title": "唯一", "type": "single", "description": "以邓紫棋重新改编的方式表达关系中的唯一性与不可替代。", "original_artist": "告五人"},
+    {"year": 2023, "title": "李香兰", "type": "single", "description": "以更成熟的声音重唱经典，保留时代感、身份感和爱情遗憾。", "original_artist": "张学友"},
+    {"year": 2023, "title": "11", "type": "single", "description": "重新整理关于数字、陪伴和感情记忆的流行作品。", "original_artist": "告五人"},
+    {"year": 2023, "title": "你成为了谁的幸福", "type": "single", "description": "重新填词后追问一个人如何成为另一个人的幸福，带有成长和祝福意味。", "original_artist": "欧阳娜娜"},
+    {"year": 2024, "title": "Amazing Grace", "type": "cover_single", "description": "以信仰与感恩为核心的经典圣诗演绎，延续邓紫棋作品中关于光与救赎的主题。", "original_artist": "John Newton"},
+    {"year": 2025, "title": "Still Breathing", "type": "featured_single", "description": "与 Faouzia、ILLENIUM 合作的英文电子流行作品，以仍然呼吸象征在压力和创伤中继续活下去。", "featured_artists": ["Faouzia", "ILLENIUM"]},
+    {"year": 2025, "title": "Sacrifice", "type": "featured_single", "description": "与《英雄联盟》音乐项目合作的英文/史诗向作品，围绕战斗、代价与为信念付出的牺牲展开。", "featured_artist": "League of Legends Music"},
+    {"year": 2026, "title": "让你知道", "type": "featured_single", "description": "与汪苏泷合作的全新单曲，围绕把未说出口的心意传达给重要的人展开。", "featured_artist": "汪苏泷", "work": "《明日世界 ACT I》"}
+  ],
+  "coverage_notes": [
+    "本文件以作品发行与可供开发的内容实体为核心；音乐视频、演唱会曲目、综艺现场和非正式演出不作为独立专辑重复录入。",
+    "《童话的休止符》三部曲先以三张数字 EP 发布，后合并为实体专辑，因此数据中既保留三张 EP，又保留合并专辑的正式曲目。",
+    "《Revelación》是《启示录》的西班牙语对应版本，曲目用 maps_to 关联中文原曲，便于多语言产品建模。",
+    "《I AM GLORIA》涉及早期作品的重录版本，原曲与重录版应在产品中用不同 recording_id 区分。",
+    "正式商业使用前，需另外核验录音母带、词曲著作权、封面及音频授权；本文件只整理事实与编辑概述，不授予使用许可。"
+  ]
+}
