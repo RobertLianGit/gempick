@@ -16,7 +16,7 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 body {
   margin: 0;
   min-width: 320px;
@@ -468,12 +468,16 @@ details.ranking-tier .ranking-tier-title span { margin-left: auto; }
 @media (max-width: 680px) {
   .page-shell, .site-header, .site-footer { width: min(100% - 28px, 1180px); }
   .site-header { height: 68px; }
-  .site-nav { gap: 16px; }
+  .brand { font-size: 18px; gap: 10px; }
+  .site-nav { gap: 14px; font-size: 12px; }
   .site-nav a:nth-child(2) { display: none; }
   .hero { min-height: calc(100svh - 68px); padding: 50px 0 70px; align-items: end; }
-  .hero h1 { font-size: clamp(50px,15vw,68px); }
-  .hero-lead { font-size: 14px; line-height: 1.8; }
+  .hero h1 { font-size: clamp(42px,12vw,54px); }
+  .hero-lead { font-size: 13px; line-height: 1.75; }
   .hero-orbit { width: 88vw; right: -35%; top: 32%; }
+  .eyebrow { margin-bottom: 10px; font-size: 10px; letter-spacing: .18em; }
+  .section-heading h2, .result-preview-copy h2 { font-size: 32px; }
+  .promise-section h2 { font-size: 32px; }
   .button-row { flex-direction: column; align-items: stretch; }
   .button-row .button { width: 100%; }
   .steps-grid, .album-grid, .prose-grid, .skeleton-grid { grid-template-columns: 1fr; }
@@ -488,7 +492,8 @@ details.ranking-tier .ranking-tier-title span { margin-left: auto; }
   .preview-route { gap: 7px; }
   .flow-page, .prose-page { padding-top: 55px; }
   .flow-header { margin-bottom: 38px; }
-  .flow-header h1 { font-size: 40px; }
+  .flow-header h1 { font-size: 34px; line-height: 1.28; }
+  .flow-header > p:last-child { font-size: 13px; }
   .top-action-panel { align-items: stretch; flex-direction: column; gap: 18px; padding: 20px; }
   .top-action-buttons { align-items: stretch; flex-direction: column-reverse; }
   .top-action-buttons .button, .wildcard-action-panel > .button { width: 100%; }
@@ -509,39 +514,68 @@ details.ranking-tier .ranking-tier-title span { margin-left: auto; }
   .inline-heading { align-items: flex-start; flex-direction: column; gap: 10px; }
   .bracket-actions { flex-direction: column-reverse; }
   .bracket-actions .button { width: 100%; }
-  .duel-heading { padding: 34px 0 28px; }
-  .duel-stage { grid-template-columns: 1fr; gap: 12px; }
-  .duel-card { min-height: auto; width: 100%; padding: 20px; display: flex; align-items: stretch; text-align: left; }
-  .card-orbit { width: 120px; height: 60px; right: -20px; top: 15px; }
+  .progress-wrap { margin-top: 24px; }
+  .progress-copy { font-size: 9px; }
+  .duel-heading { padding: 22px 0 18px; }
+  .duel-heading h1 { font-size: 24px; line-height: 1.35; }
+  .duel-stage { grid-template-columns: 1fr; gap: 10px; }
+  .duel-card { min-height: auto; width: 100%; padding: 16px; border-radius: 22px; display: flex; align-items: stretch; text-align: left; }
+  .card-orbit { width: 106px; height: 53px; right: -20px; top: 13px; }
   .duel-card-copy { margin: 0; z-index: 2; }
-  .duel-card-copy .eyebrow { margin-bottom: 8px; }
-  .duel-card h2 { font-size: 28px; }
+  .duel-card-copy .eyebrow { margin-bottom: 6px; font-size: 10px; letter-spacing: .16em; }
+  .duel-card h2 { font-size: 24px; line-height: 1.25; }
+  .track-en { margin: 4px 0; font-size: 10px; }
+  .track-story { margin: 16px 0 14px; padding: 13px 10px; }
+  .track-story > span { font-size: 8px; margin-bottom: 5px; }
+  .track-story > p { font-size: 13px; line-height: 1.68; }
+  .track-story details { margin-top: 10px; font-size: 10px; }
+  .track-story details p { font-size: 10px; line-height: 1.6; }
   .duel-card-actions { align-items: stretch; width: 100%; }
   .duel-card-actions .button, .listen-button { width: 100%; max-width: none; }
-  .duel-listen-guide { align-items: flex-start; border-radius: 18px; }
-  .versus { height: 30px; }
+  .duel-card-actions .button { min-height: 46px; font-size: 13px; }
+  .listen-button { padding: 8px 10px; }
+  .listen-button > span:first-child { width: 30px; height: 30px; flex-basis: 30px; }
+  .listen-button strong { font-size: 10px; }
+  .listen-button small { font-size: 8px; }
+  .duel-listen-guide { margin: -4px auto 18px; padding: 9px 12px; gap: 9px; align-items: flex-start; border-radius: 16px; }
+  .duel-listen-guide strong { font-size: 10px; }
+  .duel-listen-guide small { font-size: 8px; }
+  .versus { height: 28px; }
   .versus::before { top: 50%; left: 12%; right: 12%; bottom: auto; width: auto; height: 1px; }
   .play-controls p { display: none; }
   .reveal-actions { flex-direction: column-reverse; width: 100%; }
+  .reveal-page { padding: 48px 0; }
+  .reveal-page h1 { font-size: clamp(42px,13vw,60px); }
+  .reveal-fact p { font-size: 14px; }
+  .reveal-fact .reveal-album-context { font-size: 11px; }
   .champion-actions { flex-direction: column; width: 100%; }
   .reveal-actions .button, .champion-actions .button { width: 100%; }
-  .champion-hero h1 { font-size: clamp(56px,18vw,88px); }
+  .champion-hero { padding: 64px 0; }
+  .champion-hero h1 { font-size: clamp(44px,14vw,64px); }
+  .champion-en, .champion-meta { font-size: 13px; }
+  .champion-statement { font-size: 15px; }
   .champion-orbit { width: 110vw; height: 56vw; }
   .result-stats { grid-template-columns: 1fr 1fr; }
   .route-section { padding-top: 70px; }
   .ranking-section { padding-top: 70px; }
   .ranking-heading { grid-template-columns: 1fr; gap: 16px; }
+  .ranking-heading h2 { font-size: 30px; }
+  .ranking-heading > p { font-size: 12px; }
   .ranking-tracks { grid-template-columns: 1fr; }
   .ranking-tier-title { align-items: flex-start; flex-wrap: wrap; }
   details.ranking-tier .ranking-tier-title span { margin-left: 0; }
   .restart-panel { padding: 28px; flex-direction: column; align-items: flex-start; gap: 20px; }
   .restart-panel .button { width: 100%; }
   .prose-grid article { min-height: 230px; padding: 28px; }
+  .prose-grid h2 { font-size: 23px; }
+  .prose-grid p, .legal-sections p { font-size: 13px; }
   .legal-sections section { padding-left: 24px; }
   .site-footer { flex-direction: column; gap: 14px; }
   .site-footer div { flex-wrap: wrap; gap: 14px 20px; }
   .music-platform-backdrop, .result-share-backdrop { padding: 12px; align-items: end; }
   .music-platform-dialog, .result-share-dialog { max-height: calc(100svh - 24px); padding: 26px 18px 20px; border-radius: 24px 24px 18px 18px; }
+  .music-platform-dialog h2, .result-share-dialog h2 { font-size: 26px; }
+  .music-platform-intro { font-size: 12px; }
   .music-platform-options { grid-template-columns: 1fr; }
   .result-share-actions { align-items: stretch; flex-direction: column; }
   .result-share-actions .button { width: 100%; }
