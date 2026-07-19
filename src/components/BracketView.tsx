@@ -9,8 +9,8 @@ function MatchNode({ match, bracket }: { match: TournamentMatch; bracket: Bracke
       <span className="match-number">第 {match.orderInRound + 1} 次相遇</span>
       {participants.map((trackId, index) => (
         <div className={trackId === match.winnerTrackId ? "match-entry match-winner" : "match-entry"} key={index}>
-          <span>{trackId ? getTrack(trackId)?.title : "等待前一段选择"}</span>
-          {trackId === match.winnerTrackId && <span aria-label="继续留下">✦</span>}
+          <span>{trackId ? getTrack(trackId)?.title : "等待前一次 Pick"}</span>
+          {trackId === match.winnerTrackId && <span aria-label="已被 Pick">✦</span>}
         </div>
       ))}
     </article>

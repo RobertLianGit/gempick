@@ -57,9 +57,9 @@ export default function ResultPage() {
     return (
       <div className="page-shell empty-state">
         <span className="empty-orbit" aria-hidden="true" />
-        <h1>最后留下的这一首还没有出现</h1>
-        <p>完成全部选择后，你会在这里看到它走过的路。</p>
-        <button className="button button-primary" onClick={() => router.push(bracket ? "/play" : "/select")}>{bracket ? "继续刚才的选择" : "开始选择"}</button>
+        <h1>你的最 Pick 还没有出现</h1>
+        <p>完成全部 Pick 后，你会在这里看到结果和完整过程。</p>
+        <button className="button button-primary" onClick={() => router.push(bracket ? "/play" : "/select")}>{bracket ? "继续刚才的 Pick" : "开始我的 Pick"}</button>
       </div>
     );
   }
@@ -72,8 +72,8 @@ export default function ResultPage() {
         <h1>{champion.title}</h1>
         {champion.titleEn && <p className="champion-en">{champion.titleEn}</p>}
         <p className="champion-meta">{champion.albumTitle} · {champion.releaseYear}</p>
-        <p className="champion-statement">最后留下的，是这一首。</p>
-        <p className="champion-explanation">这不是哪首歌“最好”，只是这一刻，你最想留下它。</p>
+        <p className="champion-statement">最终 Pick 的，是这一首。</p>
+        <p className="champion-explanation">这不是哪首歌“最好”，只是这一刻，它最对你的心跳。</p>
         <div className="champion-actions">
           <MusicListenButton track={champion} className="button button-gold button-large result-listen-button" title="去听这首歌" note="" />
           <button className="button button-primary button-large" type="button" onClick={generateShareImage} disabled={imageState === "正在生成…"}>{imageState}</button>
@@ -84,9 +84,9 @@ export default function ResultPage() {
 
       <section className="page-shell result-details">
         <div className="result-stats">
-          <div><strong>{bracket.selectedTrackIds.length} 首</strong><span>这次从</span></div>
-          <div><strong>{bracket.matches.length} 次</strong><span>你做出了</span></div>
-          <div><strong>{route.length} 次</strong><span>它继续留下</span></div>
+          <div><strong>{bracket.selectedTrackIds.length} 首</strong><span>候选歌曲</span></div>
+          <div><strong>{bracket.matches.length} 次</strong><span>完成 Pick</span></div>
+          <div><strong>{route.length} 次</strong><span>被 Pick 次数</span></div>
           <div><strong>{finalist?.title ?? "—"}</strong><span>最后一次遇见</span></div>
         </div>
         <section className="ranking-section">
@@ -135,7 +135,7 @@ export default function ResultPage() {
             {route.map(({ match, opponentTrackId }, index) => (
               <article className="route-item" key={match.id}>
                 <span className="route-star">✦</span>
-                <div><small>{match.roundLabel}</small><p>留下《{champion.title}》</p><span>这一次遇见《{opponentTrackId ? getTrack(opponentTrackId)?.title : "未知"}》</span></div>
+                <div><small>{match.roundLabel}</small><p>Pick《{champion.title}》</p><span>这一次遇见《{opponentTrackId ? getTrack(opponentTrackId)?.title : "未知"}》</span></div>
                 <em className="mono">{String(index + 1).padStart(2, "0")}</em>
               </article>
             ))}
@@ -143,13 +143,13 @@ export default function ResultPage() {
         </div>
         {showBracket && <div className="full-bracket"><BracketView bracket={bracket} /></div>}
         <div className="restart-panel">
-          <div><p className="eyebrow">下一次也许会不同</p><h2>选择没有标准答案。</h2><p>重新开始后，之前的选择会被清除。</p></div>
+          <div><p className="eyebrow">下一次也许会不同</p><h2>Pick 没有标准答案。</h2><p>重新开始后，之前的 Pick 记录会被清除。</p></div>
           <button className="button button-secondary" type="button" onClick={() => {
-            if (window.confirm("重新开始后，之前的选择会被清除。确定要从头来吗？")) {
+            if (window.confirm("重新开始后，之前的 Pick 记录会被清除。确定要从头来吗？")) {
               reset();
               router.push("/select");
             }
-          }}>重新开始一段选择</button>
+          }}>重新开始 Pick</button>
         </div>
       </section>
       {resultImageUrl && (

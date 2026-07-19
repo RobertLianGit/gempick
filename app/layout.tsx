@@ -5,8 +5,8 @@ import { SiteHeader } from "@/src/components/SiteHeader";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: { default: "心跳之间｜邓紫棋歌曲个人Pick体验", template: "%s · 心跳之间" },
-  description: "一个非官方粉丝项目：在一首首歌之间，通过一对一选择，找到你最后想留下的那一首。",
+  title: { default: "心跳之间｜邓紫棋歌曲个人 Pick 体验", template: "%s · 心跳之间" },
+  description: "一个非官方粉丝项目：让歌曲两两相遇，每次 Pick 一首，得到你的个人排行榜和最 Pick 的歌。",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

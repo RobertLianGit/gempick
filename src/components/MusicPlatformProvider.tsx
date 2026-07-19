@@ -99,7 +99,7 @@ export function MusicListenButton({
   track,
   className = "listen-button",
   title = "去音乐平台听听",
-  note = "不太熟悉？先去听听，再回来选择；进度还在 ↗",
+  note = "不太熟悉？先去听听，再回来 Pick；进度还在 ↗",
 }: {
   track: Track;
   className?: string;

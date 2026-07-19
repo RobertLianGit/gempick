@@ -27,10 +27,10 @@ export function getTournamentShape(trackCount: number) {
 }
 
 export function getRoundLabel(entrantCount: number) {
-  if (entrantCount === 2) return "最后一次相遇";
+  if (entrantCount === 2) return "最终 Pick";
   if (entrantCount === 4) return "最后四首";
   if (entrantCount === 8) return "最后八首";
-  return `${entrantCount} 首中`;
+  return `${entrantCount} 首阶段`;
 }
 
 function createId(prefix: string, index: number) {
@@ -44,7 +44,7 @@ export function createBracket(
 ): BracketState {
   const selectedTrackIds = uniqueTrackIds(inputTrackIds);
   if (selectedTrackIds.length < MIN_TRACKS || selectedTrackIds.length > MAX_TRACKS) {
-    throw new Error(`参赛歌曲数量必须在 ${MIN_TRACKS} 到 ${MAX_TRACKS} 之间。`);
+    throw new Error(`候选歌曲数量必须在 ${MIN_TRACKS} 到 ${MAX_TRACKS} 之间。`);
   }
 
   const random = createSeededRandom(seed);
@@ -59,7 +59,7 @@ export function createBracket(
       id: matchId,
       stage: "qualifier",
       roundIndex: -1,
-      roundLabel: "预选对决",
+      roundLabel: "预选 Pick",
       orderInRound: index,
       slots: [
         { kind: "track", trackId: shuffled[index * 2] },
@@ -136,10 +136,10 @@ export function decideMatch(
   now = new Date().toISOString(),
 ) {
   const match = bracket.matches.find((candidate) => candidate.id === matchId);
-  if (!match) throw new Error("找不到这场对决。");
-  if (match.winnerTrackId) throw new Error("这场对决已经完成。");
+  if (!match) throw new Error("找不到这次 Pick。");
+  if (match.winnerTrackId) throw new Error("这次 Pick 已经完成。");
   const participants = getMatchParticipants(match, bracket);
-  if (!participants.includes(winnerTrackId)) throw new Error("所选歌曲不在本场对决中。");
+  if (!participants.includes(winnerTrackId)) throw new Error("被 Pick 的歌曲不在本次相遇中。");
 
   return {
     ...bracket,
@@ -208,7 +208,7 @@ export function getRankingTiers(bracket: BracketState): RankingTier[] {
     startRank: 1,
     endRank: 1,
     trackIds: [championTrackId],
-    stageLabel: "最后留下",
+    stageLabel: "最 Pick",
   }];
   let nextRank = 2;
 
@@ -246,7 +246,7 @@ export function getRankingTiers(bracket: BracketState): RankingTier[] {
       startRank: nextRank,
       endRank: nextRank + qualifierTrackIds.length - 1,
       trackIds: qualifierTrackIds,
-      stageLabel: "预选对决",
+      stageLabel: "预选 Pick",
     });
   }
 

@@ -4,7 +4,7 @@ export function ProgressBar({ current, total, label }: { current: number; total:
     <div className="progress-wrap" aria-label={`${label} ${current}/${total}`}>
       <div className="progress-copy">
         <span>{label}</span>
-        <span className="mono">你已经做出了 {current} 次选择 · 共 {total} 次</span>
+        <span className="mono">已完成 {current} 次 Pick · 共 {total} 次</span>
       </div>
       <div className="orbit-progress">
         <div className="orbit-progress-fill" style={{ width: `${percentage}%` }} />

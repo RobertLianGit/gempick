@@ -8,7 +8,7 @@ export function SiteHeader() {
         心跳之间
       </Link>
       <nav className="site-nav" aria-label="主导航">
-        <Link href="/select">开始选择</Link>
+        <Link href="/select">开始 Pick</Link>
         <Link href="/about">玩法</Link>
         <Link href="/legal">说明</Link>
       </nav>

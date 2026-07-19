@@ -27,7 +27,7 @@ export default function SelectPage() {
       return;
     }
     if (selected.length >= MAX_TRACKS) {
-      setMessage(`最多选择 ${MAX_TRACKS} 首；请先放下一首。`);
+      setMessage(`最多加入 ${MAX_TRACKS} 首；请先移出一首候选歌。`);
       return;
     }
     updateSelection([...selected, trackId]);
@@ -45,7 +45,7 @@ export default function SelectPage() {
     }
     const next = [...new Set([...selected, ...album.trackIds])];
     if (next.length > MAX_TRACKS) {
-      setMessage(`最多选择 ${MAX_TRACKS} 首；请先取消一张专辑。`);
+      setMessage(`最多加入 ${MAX_TRACKS} 首；请先移出一张专辑。`);
       return;
     }
     updateSelection(next);
@@ -54,42 +54,42 @@ export default function SelectPage() {
 
   function continueFlow() {
     if (selected.length < MIN_TRACKS) {
-      setMessage(`还差 ${MIN_TRACKS - selected.length} 首，才能开始这段旅程。`);
+      setMessage(`还差 ${MIN_TRACKS - selected.length} 首候选歌，才能开始 Pick。`);
       return;
     }
     router.push("/bracket");
   }
 
   function restartSelection() {
-    if (window.confirm("重新开始后，之前的选择会被清除。确定要从头来吗？")) {
+    if (window.confirm("重新开始后，之前的 Pick 记录会被清除。确定要从头来吗？")) {
       reset();
       setExpanded([]);
       setMessage("");
     }
   }
 
-  if (!hydrated) return <div className="page-shell loading-state">正在找回你的选择…</div>;
+  if (!hydrated) return <div className="page-shell loading-state">正在找回你的 Pick 进度…</div>;
 
   return (
     <div className="page-shell flow-page">
       <header className="flow-header">
         <p className="eyebrow">第一步 · 先从十首开始</p>
-        <h1>先留下你想带上的歌</h1>
-        <p>起点十首已经替你准备好；接下来可以按专辑逐首挑选，也可以整张加入。</p>
+        <h1>先加入想参与 Pick 的歌</h1>
+        <p>起点十首已经替你加入候选；接下来可以按专辑逐首加入，也可以整张加入。</p>
       </header>
 
       <section className="top-action-panel">
         <div className="top-action-status">
           <span className="status-star" aria-hidden="true">✦</span>
           <div>
-            <strong>你已经留下 {selected.length} 首</strong>
-            <span>{selected.length < MIN_TRACKS ? `距离 ${MIN_TRACKS} 首还差 ${MIN_TRACKS - selected.length} 首` : `接下来还要做 ${selected.length - 1} 次选择`}</span>
-            <small>这段选择已经替你保存好了</small>
+            <strong>已加入 {selected.length} 首候选歌</strong>
+            <span>{selected.length < MIN_TRACKS ? `距离 ${MIN_TRACKS} 首还差 ${MIN_TRACKS - selected.length} 首` : `接下来将完成 ${selected.length - 1} 次 Pick`}</span>
+            <small>候选歌和 Pick 进度已保存在本机</small>
           </div>
         </div>
         <div className="top-action-buttons">
-          <button className="text-link reset-selection-button" type="button" onClick={restartSelection}>重新开始一段选择</button>
-          <Link href="/about" className="text-link">轻量旅程怎么玩？</Link>
+          <button className="text-link reset-selection-button" type="button" onClick={restartSelection}>重新开始 Pick</button>
+          <Link href="/about" className="text-link">Pick 是怎么玩的？</Link>
           <button className="button button-primary" type="button" onClick={continueFlow} disabled={selected.length < MIN_TRACKS}>
             {selected.length < MIN_TRACKS ? `还差 ${MIN_TRACKS - selected.length} 首` : "开始相遇 →"}
           </button>
@@ -100,7 +100,7 @@ export default function SelectPage() {
       <section className="starter-panel">
         <div className="section-heading inline-heading">
           <div><p className="eyebrow">起点十首</p><h2>先从这十首开始</h2></div>
-          <span>已经自动留下，可随时放下或换歌</span>
+          <span>已经自动加入，可随时移出或换歌</span>
         </div>
         <div className="starter-grid">
           {starterTracks.map((track) => {
@@ -117,7 +117,7 @@ export default function SelectPage() {
       </section>
 
       <div className="selection-tools">
-        <span>继续探索专辑：可以逐首加入，也可以整张带上</span>
+        <span>继续探索专辑：可以逐首加入，也可以整张加入候选</span>
         <span className="mono">上限 {MAX_TRACKS} 首</span>
       </div>
 
@@ -129,7 +129,7 @@ export default function SelectPage() {
             <article className={`album-card ${isSelected ? "album-card-selected" : ""}`} style={{ "--delay": `${index * 18}ms` } as React.CSSProperties} key={album.id}>
               <div className="album-card-top">
                 <span className="album-year mono">{album.releaseYear}</span>
-                <span className="album-status" aria-label={isSelected ? "已选择" : "未选择"}>{isSelected ? "✦" : "○"}</span>
+                <span className="album-status" aria-label={isSelected ? "已加入" : "未加入"}>{isSelected ? "✦" : "○"}</span>
               </div>
               <div className="album-orbit" aria-hidden="true"><span /></div>
               <p className="album-type">{album.releaseType === "ep" ? "EP" : "ALBUM"} · {album.trackIds.length} TRACKS</p>
@@ -137,7 +137,7 @@ export default function SelectPage() {
               {album.titleEn && album.titleEn !== album.title && <p className="album-en">{album.titleEn}</p>}
               <div className="album-actions">
                 <button className={isSelected ? "button button-secondary" : "button button-primary"} type="button" onClick={() => toggleAlbum(album.id)}>
-                  {isSelected ? "撤下整张专辑" : "整张加入"}
+                  {isSelected ? "移出整张专辑" : "整张加入候选"}
                 </button>
                 <button className="icon-button" type="button" aria-expanded={isExpanded} onClick={() => setExpanded(isExpanded ? expanded.filter((id) => id !== album.id) : [...expanded, album.id])}>
                   {isExpanded ? "收起歌曲" : "看看这张专辑里有什么"} {isExpanded ? "↑" : "↓"}
@@ -152,7 +152,7 @@ export default function SelectPage() {
                       <li key={id}>
                         <span>{track?.title}</span>
                         <button className="track-inline-button" type="button" onClick={() => toggleTrack(id)} aria-pressed={checked}>
-                          {checked ? "已加入 · 放下" : "逐首加入"}
+                          {checked ? "已加入 · 移出" : "逐首加入"}
                         </button>
                       </li>
                     );

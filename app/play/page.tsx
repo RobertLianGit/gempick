@@ -49,14 +49,14 @@ export default function PlayPage() {
     return () => window.removeEventListener("keydown", handleKey);
   }, [choose, leftTrack, reveal, rightTrack]);
 
-  if (!hydrated) return <div className="page-shell loading-state">正在继续刚才的选择…</div>;
+  if (!hydrated) return <div className="page-shell loading-state">正在继续刚才的 Pick…</div>;
   if (!bracket) {
     return (
       <div className="page-shell empty-state">
         <span className="empty-orbit" aria-hidden="true" />
         <h1>歌曲还没有开始相遇</h1>
-        <p>先选出想带上的歌，再生成这次相遇。</p>
-        <button className="button button-primary" onClick={() => router.push("/select")}>从选择开始</button>
+        <p>先加入想参与的候选歌，再生成这次相遇。</p>
+        <button className="button button-primary" onClick={() => router.push("/select")}>从加入候选歌开始</button>
       </div>
     );
   }
@@ -69,9 +69,9 @@ export default function PlayPage() {
     return (
       <div className="page-shell reveal-page">
         <div className="reveal-orbit" aria-hidden="true"><span /></div>
-        <p className="eyebrow">{reveal.roundLabel} · 这段选择已经替你保存好了</p>
+        <p className="eyebrow">{reveal.roundLabel} · 这次 Pick 已保存在本机</p>
         <h1>{winner?.title}</h1>
-        <p className="reveal-line">它会继续留下。</p>
+        <p className="reveal-line">{finished ? "你完成了最后一次 Pick。" : "你 Pick 了这一首，它将进入下一轮。"}</p>
         <div className="reveal-fact">
           <span>歌曲背后的感觉</span>
           <p>{winner?.summary}</p>
@@ -83,12 +83,12 @@ export default function PlayPage() {
           <button className="button button-secondary" type="button" onClick={() => {
             updateBracket(undoLastDecision(bracket));
             setReveal(null);
-          }}>回到刚才的选择</button>
+          }}>撤回刚才的 Pick</button>
           <button className="button button-primary button-large" type="button" onClick={() => finished ? router.push("/result") : setReveal(null)}>
-            {finished ? "看看最后留下的这一首 ✦" : "继续选择 →"}
+            {finished ? "查看我的最 Pick ✦" : "继续 Pick →"}
           </button>
         </div>
-        <p className="reveal-loser">这一次，暂时和《{loser?.title}》告别</p>
+        <p className="reveal-loser">《{loser?.title}》这一次没有被 Pick</p>
       </div>
     );
   }
@@ -102,12 +102,12 @@ export default function PlayPage() {
     <div className="page-shell play-page">
       <ProgressBar current={completed} total={bracket.matches.length} label={`${currentMatch.roundLabel}｜第 ${roundPosition} 次相遇`} />
       <header className="duel-heading">
-        <p className="eyebrow">很难，但还是要选一首</p>
-        <h1>这一轮，你更想留下哪一首？</h1>
+        <p className="eyebrow">很难，但还是要 Pick 一首</p>
+        <h1>这一轮，你 Pick 哪一首？</h1>
       </header>
       <aside className="duel-listen-guide">
         <span aria-hidden="true">♪</span>
-        <p><strong>有不太熟悉的歌？先去听听，再回来选择。</strong><small>每张卡片都可以前往音乐平台；打开外链不会丢失这里的进度。</small></p>
+        <p><strong>有不太熟悉的歌？先去听听，再回来 Pick。</strong><small>每张卡片都可以前往音乐平台；打开外链不会丢失这里的进度。</small></p>
       </aside>
       <div className="duel-stage">
         <TrackCard track={leftTrack} side="left" onChoose={() => choose(leftTrack.id)} />
@@ -116,7 +116,7 @@ export default function PlayPage() {
       </div>
       <div className="play-controls">
         <button className="text-button" type="button" disabled={completed === 0} onClick={() => updateBracket(undoLastDecision(bracket))}>← 上一步</button>
-        <p><kbd>←</kbd><kbd>→</kbd> 也可以快速选择</p>
+        <p><kbd>←</kbd><kbd>→</kbd> 也可以快速 Pick</p>
         <button className="text-button" type="button" onClick={() => router.push("/bracket")}>暂停并看看完整旅程</button>
       </div>
     </div>

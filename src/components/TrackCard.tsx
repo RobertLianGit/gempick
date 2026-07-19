@@ -40,7 +40,7 @@ export function TrackCard({
       </div>
       <div className="duel-card-actions">
         <button className="button button-primary" type="button" onClick={onChoose} disabled={disabled}>
-          留下这首
+          Pick 这首
         </button>
         <MusicListenButton track={track} />
       </div>

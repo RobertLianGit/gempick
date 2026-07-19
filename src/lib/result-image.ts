@@ -75,7 +75,7 @@ export async function createResultImage(input: ResultImageInput) {
 
   ctx.fillStyle = "#fff7ea";
   ctx.font = "500 38px \"Songti SC\", \"STSong\", serif";
-  drawCentered(ctx, "这是这一刻，我最想留下的那一首。", 655);
+  drawCentered(ctx, "最终 Pick 的，是这一首。", 655);
 
   ctx.fillStyle = "rgba(31,22,66,.82)";
   ctx.strokeStyle = "rgba(245,217,155,.25)";
@@ -86,9 +86,9 @@ export async function createResultImage(input: ResultImageInput) {
   ctx.stroke();
 
   const stats = [
-    [`${input.selectedCount} 首`, "这次从"],
-    [`${input.choiceCount} 次`, "你做出了"],
-    [`${input.routeCount} 次`, "它继续留下"],
+    [`${input.selectedCount} 首`, "候选歌曲"],
+    [`${input.choiceCount} 次`, "完成 Pick"],
+    [`${input.routeCount} 次`, "被 Pick 次数"],
   ];
   stats.forEach(([value, label], index) => {
     const x = 445 + index * 355;
@@ -105,7 +105,7 @@ export async function createResultImage(input: ResultImageInput) {
   drawCentered(ctx, "心跳之间", 1030);
   ctx.fillStyle = "#8f87a4";
   ctx.font = "18px Inter, PingFang SC, sans-serif";
-  drawCentered(ctx, "非官方粉丝项目｜结果只代表个人当下的选择", 1080);
+  drawCentered(ctx, "非官方粉丝项目｜结果只代表个人当下的 Pick", 1080);
 
   return new Promise<Blob>((resolve, reject) => {
     canvas.toBlob((blob) => blob ? resolve(blob) : reject(new Error("结果图片生成失败")), "image/png");
