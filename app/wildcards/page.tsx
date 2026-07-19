@@ -48,22 +48,25 @@ export default function WildcardsPage() {
         <h1>{fieldIsReady ? "歌曲 16 强已经就位" : "你的六个席位，Pick 哪几首？"}</h1>
         <p>{fieldIsReady ? "现在可以生成 16 强对阵，进入正式 Pick 阶段。" : `十首种子歌已经自动入围；还需要选择 ${Math.max(0, selfPickSlotCount - selectedSelfPickCount)} 首。`}</p>
       </header>
-      <section className="top-action-panel wildcard-action-panel">
+      <section className="top-action-panel wildcard-action-panel selection-sticky-progress" aria-label={`已选 ${selected.length} / ${PICK_FIELD_SIZE} 首`}>
         <div className="top-action-status">
           <span className="status-star" aria-hidden="true">✦</span>
           <div>
-            <strong>{legacySelectionNeedsRestart ? "需要按新赛制重新预选" : `自选席位 ${selectedSelfPickCount} / ${selfPickSlotCount}`}</strong>
-            <span>{legacySelectionNeedsRestart ? "新的阵容固定为 10 首种子歌 + 6 个自选席位" : fieldIsReady ? "16 强已经就位 · 接下来完成 15 次 Pick" : `还差 ${Math.max(0, selfPickSlotCount - selectedSelfPickCount)} 个席位`}</span>
+            <strong>已选 {selected.length} / {PICK_FIELD_SIZE} 首</strong>
+            <span>{legacySelectionNeedsRestart ? "需要按新赛制重新预选" : fieldIsReady ? "16 强已经就位 · 接下来完成 15 次 Pick" : `10 首种子歌 + 自选席位 ${selectedSelfPickCount} / ${selfPickSlotCount}`}</span>
+            <div className="selection-progress-track" aria-hidden="true"><span className="selection-progress-fill" style={{ width: `${Math.min(100, (selected.length / PICK_FIELD_SIZE) * 100)}%` }} /></div>
             <small>候选歌和 Pick 进度已保存在本机</small>
           </div>
         </div>
         <div className="top-action-buttons">
-          <button className="text-link reset-selection-button" type="button" onClick={restartSelection}>重新开始 Pick</button>
           <button className="button button-primary button-large" type="button" disabled={!fieldIsReady} onClick={() => router.push("/bracket")}>
-            {legacySelectionNeedsRestart ? "请先重新开始" : fieldIsReady ? "进入 Pick 阶段 →" : `还差 ${Math.max(0, selfPickSlotCount - selectedSelfPickCount)} 个席位`}
+            {legacySelectionNeedsRestart ? "请先重新开始" : fieldIsReady ? "进入 Pick →" : `还差 ${Math.max(0, selfPickSlotCount - selectedSelfPickCount)} 个席位`}
           </button>
         </div>
       </section>
+      <div className="selection-secondary-actions">
+        <button className="text-link reset-selection-button" type="button" onClick={restartSelection}>重新开始 Pick</button>
+      </div>
 
       <div className="reference-heading">
         <div><p className="eyebrow">候选歌曲参考</p><h2>加入候选，或者移出候选</h2></div>
