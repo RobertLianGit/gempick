@@ -525,7 +525,20 @@ details.ranking-tier .ranking-tier-title span { margin-left: auto; }
   .track-tile { border-radius: 14px; padding: 12px 8px 9px; }
   .track-tile strong { font-size: 13px; }
   .selection-tools { align-items: flex-start; gap: 12px; flex-direction: column; }
-  .album-card { padding: 22px; }
+  .album-card { padding: 18px; border-radius: 20px; }
+  .album-card-top { min-height: 24px; }
+  .album-orbit { position: absolute; width: 82px; height: 40px; top: 34px; right: 58px; margin: 0; opacity: .72; }
+  .album-orbit::before { inset: 9px; }
+  .album-orbit span { width: 6px; height: 6px; right: 8px; }
+  .album-type { margin-top: 22px; margin-bottom: 4px; font-size: 9px; }
+  .album-card h2 { min-height: 0; font-size: 22px; line-height: 1.2; }
+  .album-en { margin-top: 3px; font-size: 10px; }
+  .album-actions { margin-top: 9px; }
+  .album-actions .icon-button { padding: 7px 2px; font-size: 12px; }
+  .album-track-list { margin: 8px -2px 0; padding: 10px 2px 0; font-size: 14px; }
+  .album-track-list li { gap: 12px; padding: 10px 0; }
+  .album-track-list li > span { min-width: 0; flex: 1; font: 500 16px/1.35 var(--serif); }
+  .album-track-list .track-inline-button { max-width: 46%; padding: 5px 0; font-size: 11px; line-height: 1.35; text-align: right; }
   .sticky-summary { bottom: 10px; padding: 12px 12px 12px 16px; border-radius: 20px; }
   .sticky-summary .button { padding-inline: 16px; }
   .draw-panel { padding: 24px 14px; min-height: 360px; }
