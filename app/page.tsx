@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { NonOfficialNotice } from "@/src/components/NonOfficialNotice";
 import { albums, standaloneTrackCount } from "@/src/data/catalog";
 
@@ -17,8 +16,8 @@ export default function HomePage() {
           <h1>心跳<em>之间</em></h1>
           <p className="hero-lead">找到你最后想留下的那一首，了解每一首歌曲背后的感觉</p>
           <div className="button-row">
-            <Link href="/select" prefetch className="button button-primary button-large">开始选择 <span>↗</span></Link>
-            <Link href="/about" className="button button-secondary">先看看怎么玩</Link>
+            <a href="./select/" className="button button-primary button-large">开始选择 <span>↗</span></a>
+            <a href="./about/" className="button button-secondary">先看看怎么玩</a>
           </div>
           <NonOfficialNotice compact />
         </div>
@@ -56,7 +55,7 @@ export default function HomePage() {
           <p className="eyebrow">最后会得到什么？</p>
           <h2>一张属于你的<br />音乐旅程结果。</h2>
           <p>走完整段选择后，你会看到最后留下的那一首、最后一次相遇，以及它沿途经过的每一次选择。这不是哪首歌“最好”，只是这一刻，你最想留下它。</p>
-          <Link href="/select" className="text-link text-link-large">开始我的选择 →</Link>
+          <a href="./select/" className="text-link text-link-large">开始我的选择 →</a>
         </div>
         <article className="result-preview-card" aria-label="结果页效果示例">
           <span className="preview-badge">效果示例 · 非真实结果</span>
@@ -74,7 +73,7 @@ export default function HomePage() {
       <section className="page-shell promise-section">
         <p>不是寻找“正确答案”，也不是一份公开排名。</p>
         <h2>只是认真听过之后，<br />诚实地做出自己的选择。</h2>
-        <Link href="/select" className="text-link text-link-large">进入你的音乐宇宙 →</Link>
+        <a href="./select/" className="text-link text-link-large">进入你的音乐宇宙 →</a>
       </section>
     </>
   );
