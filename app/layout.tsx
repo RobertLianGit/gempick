@@ -6,7 +6,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: { default: "心跳之间｜邓紫棋歌曲个人 Pick 体验", template: "%s · 心跳之间" },
-  description: "一个非官方粉丝项目：让歌曲两两相遇，每次 Pick 一首，得到你的个人排行榜和最 Pick 的歌。",
+  description: "当 G.E.M. 邓紫棋遇上世界杯：十首种子歌加六个自选席位组成歌曲 16 强，再一路 Pick 到决赛。",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

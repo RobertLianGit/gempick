@@ -5,7 +5,8 @@ import type {
 } from "@/src/types/bracket";
 import { createSeededRandom, seededShuffle } from "./seeded-random";
 
-export const MIN_TRACKS = 16;
+export const PICK_FIELD_SIZE = 16;
+export const MIN_TRACKS = PICK_FIELD_SIZE;
 export const MAX_TRACKS = 128;
 
 export function uniqueTrackIds(trackIds: string[]) {
@@ -27,9 +28,10 @@ export function getTournamentShape(trackCount: number) {
 }
 
 export function getRoundLabel(entrantCount: number) {
-  if (entrantCount === 2) return "最终 Pick";
-  if (entrantCount === 4) return "最后四首";
-  if (entrantCount === 8) return "最后八首";
+  if (entrantCount === 2) return "决赛 Pick";
+  if (entrantCount === 4) return "4 强 Pick";
+  if (entrantCount === 8) return "8 强 Pick";
+  if (entrantCount === 16) return "16 强 Pick";
   return `${entrantCount} 首阶段`;
 }
 
@@ -59,7 +61,7 @@ export function createBracket(
       id: matchId,
       stage: "qualifier",
       roundIndex: -1,
-      roundLabel: "预选 Pick",
+      roundLabel: "附加 Pick",
       orderInRound: index,
       slots: [
         { kind: "track", trackId: shuffled[index * 2] },
@@ -246,7 +248,7 @@ export function getRankingTiers(bracket: BracketState): RankingTier[] {
       startRank: nextRank,
       endRank: nextRank + qualifierTrackIds.length - 1,
       trackIds: qualifierTrackIds,
-      stageLabel: "预选 Pick",
+      stageLabel: "附加 Pick",
     });
   }
 

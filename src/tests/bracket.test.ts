@@ -6,6 +6,7 @@ import {
   getCurrentMatch,
   getMatchParticipants,
   getRankingTiers,
+  getRoundLabel,
   getTournamentShape,
   uniqueTrackIds,
 } from "../lib/bracket";
@@ -43,6 +44,10 @@ describe("tournament shape", () => {
     const input = [...ids(16), "track-1", "track-2"];
     expect(uniqueTrackIds(input)).toHaveLength(16);
     expect(createBracket(input, "seed").selectedTrackIds).toHaveLength(16);
+  });
+
+  it("uses World Cup-style labels for the 16-song Pick stage", () => {
+    expect([16, 8, 4, 2].map(getRoundLabel)).toEqual(["16 强 Pick", "8 强 Pick", "4 强 Pick", "决赛 Pick"]);
   });
 });
 

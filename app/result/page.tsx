@@ -59,7 +59,7 @@ export default function ResultPage() {
         <span className="empty-orbit" aria-hidden="true" />
         <h1>你的最 Pick 还没有出现</h1>
         <p>完成全部 Pick 后，你会在这里看到结果和完整过程。</p>
-        <button className="button button-primary" onClick={() => router.push(bracket ? "/play" : "/select")}>{bracket ? "继续刚才的 Pick" : "开始我的 Pick"}</button>
+        <button className="button button-primary" onClick={() => router.push(bracket ? "/play" : "/select")}>{bracket ? "继续刚才的 Pick" : "进入预选阶段"}</button>
       </div>
     );
   }
@@ -84,7 +84,7 @@ export default function ResultPage() {
 
       <section className="page-shell result-details">
         <div className="result-stats">
-          <div><strong>{bracket.selectedTrackIds.length} 首</strong><span>候选歌曲</span></div>
+          <div><strong>{bracket.selectedTrackIds.length} 首</strong><span>歌曲 16 强</span></div>
           <div><strong>{bracket.matches.length} 次</strong><span>完成 Pick</span></div>
           <div><strong>{route.length} 次</strong><span>被 Pick 次数</span></div>
           <div><strong>{finalist?.title ?? "—"}</strong><span>最后一次遇见</span></div>

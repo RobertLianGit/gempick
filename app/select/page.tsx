@@ -4,8 +4,11 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { albums, getTrack, starterTrackIds, starterTracks } from "@/src/data/catalog";
-import { MAX_TRACKS, MIN_TRACKS } from "@/src/lib/bracket";
+import { PICK_FIELD_SIZE } from "@/src/lib/bracket";
 import { useSavedState } from "@/src/hooks/useSavedState";
+
+const starterTrackIdSet = new Set(starterTrackIds);
+const selfPickSlotCount = PICK_FIELD_SIZE - starterTrackIds.length;
 
 export default function SelectPage() {
   const router = useRouter();
@@ -13,6 +16,10 @@ export default function SelectPage() {
   const [expanded, setExpanded] = useState<string[]>([]);
   const [message, setMessage] = useState("");
   const selected = state.selectedTrackIds;
+  const selectedSelfPickCount = selected.filter((id) => !starterTrackIdSet.has(id)).length;
+  const starterSongsReady = starterTrackIds.every((id) => selected.includes(id));
+  const fieldIsReady = starterSongsReady && selected.length === PICK_FIELD_SIZE && selectedSelfPickCount === selfPickSlotCount;
+  const legacySelectionNeedsRestart = state.starterSeeded && !state.bracket && (!starterSongsReady || selectedSelfPickCount > selfPickSlotCount);
 
   useEffect(() => {
     if (hydrated && !state.starterSeeded && selected.length === 0 && starterTrackIds.length === 10) {
@@ -21,40 +28,30 @@ export default function SelectPage() {
   }, [hydrated, selected.length, state.starterSeeded, updateSelection]);
 
   function toggleTrack(trackId: string) {
+    if (starterTrackIdSet.has(trackId)) {
+      setMessage("这首是自动入围的种子歌，不占你的 6 个自选席位。");
+      return;
+    }
     if (selected.includes(trackId)) {
       updateSelection(selected.filter((id) => id !== trackId));
       setMessage("");
       return;
     }
-    if (selected.length >= MAX_TRACKS) {
-      setMessage(`最多加入 ${MAX_TRACKS} 首；请先移出一首候选歌。`);
+    if (selectedSelfPickCount >= selfPickSlotCount || selected.length >= PICK_FIELD_SIZE) {
+      setMessage("6 个自选席位已经选满；请先移出一首，再加入新的歌。");
       return;
     }
     updateSelection([...selected, trackId]);
     setMessage("");
   }
 
-  function toggleAlbum(albumId: string) {
-    const album = albums.find((candidate) => candidate.id === albumId);
-    if (!album) return;
-    const allSelected = album.trackIds.every((id) => selected.includes(id));
-    if (allSelected) {
-      updateSelection(selected.filter((id) => !album.trackIds.includes(id)));
-      setMessage("");
-      return;
-    }
-    const next = [...new Set([...selected, ...album.trackIds])];
-    if (next.length > MAX_TRACKS) {
-      setMessage(`最多加入 ${MAX_TRACKS} 首；请先移出一张专辑。`);
-      return;
-    }
-    updateSelection(next);
-    setMessage("");
-  }
-
   function continueFlow() {
-    if (selected.length < MIN_TRACKS) {
-      setMessage(`还差 ${MIN_TRACKS - selected.length} 首候选歌，才能开始 Pick。`);
+    if (legacySelectionNeedsRestart) {
+      setMessage("已有记录不符合新的 10 首种子歌 + 6 个自选席位赛制，请先重新开始 Pick。");
+      return;
+    }
+    if (!fieldIsReady) {
+      setMessage(`还需要选满 ${selfPickSlotCount} 个自选席位，组成 16 强。`);
       return;
     }
     router.push("/bracket");
@@ -73,74 +70,68 @@ export default function SelectPage() {
   return (
     <div className="page-shell flow-page">
       <header className="flow-header">
-        <p className="eyebrow">第一步 · 先从十首开始</p>
-        <h1>先加入想参与 Pick 的歌</h1>
-        <p>起点十首已经替你加入候选；接下来可以按专辑逐首加入，也可以整张加入。</p>
+        <p className="eyebrow">第一步 · 世界杯式预选阶段</p>
+        <h1>十首种子歌，六个席位由你决定。</h1>
+        <p>十首种子歌已经自动入围；再从全部作品中 Pick 6 首，组成属于你的歌曲 16 强。</p>
       </header>
 
       <section className="top-action-panel">
         <div className="top-action-status">
           <span className="status-star" aria-hidden="true">✦</span>
           <div>
-            <strong>已加入 {selected.length} 首候选歌</strong>
-            <span>{selected.length < MIN_TRACKS ? `距离 ${MIN_TRACKS} 首还差 ${MIN_TRACKS - selected.length} 首` : `接下来将完成 ${selected.length - 1} 次 Pick`}</span>
+            <strong>{legacySelectionNeedsRestart ? "需要按新赛制重新预选" : `自选席位 ${selectedSelfPickCount} / ${selfPickSlotCount}`}</strong>
+            <span>{legacySelectionNeedsRestart ? "新的阵容固定为 10 首种子歌 + 6 个自选席位" : fieldIsReady ? "16 强已经就位 · 接下来完成 15 次 Pick" : `还差 ${Math.max(0, selfPickSlotCount - selectedSelfPickCount)} 个席位组成 16 强`}</span>
             <small>候选歌和 Pick 进度已保存在本机</small>
           </div>
         </div>
         <div className="top-action-buttons">
           <button className="text-link reset-selection-button" type="button" onClick={restartSelection}>重新开始 Pick</button>
           <Link href="/about" className="text-link">Pick 是怎么玩的？</Link>
-          <button className="button button-primary" type="button" onClick={continueFlow} disabled={selected.length < MIN_TRACKS}>
-            {selected.length < MIN_TRACKS ? `还差 ${MIN_TRACKS - selected.length} 首` : "开始相遇 →"}
+          <button className="button button-primary" type="button" onClick={continueFlow} disabled={!fieldIsReady}>
+            {legacySelectionNeedsRestart ? "请先重新开始" : fieldIsReady ? "进入 Pick 阶段 →" : `还差 ${Math.max(0, selfPickSlotCount - selectedSelfPickCount)} 个席位`}
           </button>
         </div>
       </section>
-      {message && <p className="inline-error" role="alert">{message}</p>}
+      {(message || legacySelectionNeedsRestart) && <p className="inline-error" role="alert">{message || "检测到旧版候选记录；请点击“重新开始 Pick”进入新的世界杯式流程。"}</p>}
 
       <section className="starter-panel">
         <div className="section-heading inline-heading">
-          <div><p className="eyebrow">起点十首</p><h2>先从这十首开始</h2></div>
-          <span>已经自动加入，可随时移出或换歌</span>
+          <div><p className="eyebrow">自动入围</p><h2>十首种子歌</h2></div>
+          <span>不占你的 6 个自选席位</span>
         </div>
         <div className="starter-grid">
-          {starterTracks.map((track) => {
-            const checked = selected.includes(track.id);
-            return (
-              <button className={`starter-track ${checked ? "starter-track-selected" : ""}`} type="button" key={track.id} onClick={() => toggleTrack(track.id)} aria-pressed={checked}>
-                <span>{checked ? "✦" : "+"}</span>
+          {starterTracks.map((track) => (
+              <div className="starter-track starter-track-selected starter-track-seeded" key={track.id}>
+                <span>种子</span>
                 <strong>{track.title}</strong>
                 <small>{track.albumTitle} · {track.releaseYear}</small>
-              </button>
-            );
-          })}
+              </div>
+          ))}
         </div>
       </section>
 
       <div className="selection-tools">
-        <span>继续探索专辑：可以逐首加入，也可以整张加入候选</span>
-        <span className="mono">上限 {MAX_TRACKS} 首</span>
+        <span>你的六个席位：展开专辑，逐首选择</span>
+        <span className="mono">已选 {Math.min(selectedSelfPickCount, selfPickSlotCount)} / {selfPickSlotCount}</span>
       </div>
 
       <div className="album-grid">
         {albums.map((album, index) => {
-          const isSelected = album.trackIds.every((id) => selected.includes(id));
+          const selectedInAlbumCount = album.trackIds.filter((id) => selected.includes(id) && !starterTrackIdSet.has(id)).length;
           const isExpanded = expanded.includes(album.id);
           return (
-            <article className={`album-card ${isSelected ? "album-card-selected" : ""}`} style={{ "--delay": `${index * 18}ms` } as React.CSSProperties} key={album.id}>
+            <article className={`album-card ${selectedInAlbumCount ? "album-card-selected" : ""}`} style={{ "--delay": `${index * 18}ms` } as React.CSSProperties} key={album.id}>
               <div className="album-card-top">
                 <span className="album-year mono">{album.releaseYear}</span>
-                <span className="album-status" aria-label={isSelected ? "已加入" : "未加入"}>{isSelected ? "✦" : "○"}</span>
+                <span className="album-status" aria-label={`${selectedInAlbumCount} 首进入自选席位`}>{selectedInAlbumCount ? selectedInAlbumCount : "○"}</span>
               </div>
               <div className="album-orbit" aria-hidden="true"><span /></div>
               <p className="album-type">{album.releaseType === "ep" ? "EP" : "ALBUM"} · {album.trackIds.length} TRACKS</p>
               <h2>{album.title}</h2>
               {album.titleEn && album.titleEn !== album.title && <p className="album-en">{album.titleEn}</p>}
               <div className="album-actions">
-                <button className={isSelected ? "button button-secondary" : "button button-primary"} type="button" onClick={() => toggleAlbum(album.id)}>
-                  {isSelected ? "移出整张专辑" : "整张加入候选"}
-                </button>
                 <button className="icon-button" type="button" aria-expanded={isExpanded} onClick={() => setExpanded(isExpanded ? expanded.filter((id) => id !== album.id) : [...expanded, album.id])}>
-                  {isExpanded ? "收起歌曲" : "看看这张专辑里有什么"} {isExpanded ? "↑" : "↓"}
+                  {isExpanded ? "收起歌曲" : "从这张专辑选歌"} {isExpanded ? "↑" : "↓"}
                 </button>
               </div>
               {isExpanded && (
@@ -148,11 +139,12 @@ export default function SelectPage() {
                   {album.trackIds.map((id) => {
                     const track = getTrack(id);
                     const checked = selected.includes(id);
+                    const seeded = starterTrackIdSet.has(id);
                     return (
                       <li key={id}>
                         <span>{track?.title}</span>
-                        <button className="track-inline-button" type="button" onClick={() => toggleTrack(id)} aria-pressed={checked}>
-                          {checked ? "已加入 · 移出" : "逐首加入"}
+                        <button className="track-inline-button" type="button" onClick={() => toggleTrack(id)} aria-pressed={checked} disabled={seeded}>
+                          {seeded ? "种子歌 · 已入围" : checked ? "已选 · 移出席位" : "加入自选席位"}
                         </button>
                       </li>
                     );

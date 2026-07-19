@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { BracketView } from "@/src/components/BracketView";
-import { createBracket, generateSeed, getCurrentMatch, getTournamentShape, MIN_TRACKS } from "@/src/lib/bracket";
+import { starterTrackIds } from "@/src/data/catalog";
+import { createBracket, generateSeed, getCurrentMatch, getTournamentShape, PICK_FIELD_SIZE } from "@/src/lib/bracket";
 import { useSavedState } from "@/src/hooks/useSavedState";
 
 export default function BracketPage() {
@@ -19,14 +20,14 @@ export default function BracketPage() {
   }
 
   if (!hydrated) return <div className="page-shell loading-state">正在读取这次相遇…</div>;
-  if (selectedCount < MIN_TRACKS) {
+  if (selectedCount !== PICK_FIELD_SIZE) {
     return (
       <div className="page-shell empty-state">
         <span className="empty-orbit" aria-hidden="true" />
         <p className="eyebrow">阵容尚未就位</p>
-        <h1>还需要 {MIN_TRACKS - selectedCount} 首歌</h1>
-        <p>至少加入 16 首候选歌，才能让歌曲开始相遇。</p>
-        <Link href="/select" className="button button-primary">继续加入候选歌</Link>
+        <h1>16 强阵容还没有就位</h1>
+        <p>预选阶段由 10 首种子歌和你选择的 6 首歌组成。</p>
+        <Link href="/select" className="button button-primary">返回预选阶段</Link>
       </div>
     );
   }
@@ -35,25 +36,24 @@ export default function BracketPage() {
   return (
     <div className="page-shell flow-page bracket-page">
       <header className="flow-header centered-header">
-        <p className="eyebrow">第二步 · 生成 Pick 顺序</p>
-        <h1>让歌曲开始相遇</h1>
-        <p>{bracket ? "这次相遇已经替你保存好了，刷新不会改变结果。" : "有些歌曲会先遇见，有些歌曲会稍后登场。位置完全随机，也不回避同专辑相遇。"}</p>
+        <p className="eyebrow">第二步 · 世界杯式 Pick 阶段</p>
+        <h1>你的歌曲 16 强，准备相遇。</h1>
+        <p>{bracket ? "16 强对阵已经保存，刷新不会改变。" : "系统会随机生成 16 强对阵；每次相遇 Pick 一首，一路走到决赛。"}</p>
       </header>
 
       <section className="draw-panel">
         <div className="draw-orbit" aria-hidden="true"><span /><span /></div>
         <div className="draw-stats">
-          <div><strong>{selectedCount}</strong><span>候选歌曲</span></div>
+          <div><strong>{starterTrackIds.length}</strong><span>种子歌</span></div>
           <i />
-          <div><strong>{shape.qualifierCount}</strong><span>预选 Pick</span></div>
+          <div><strong>{selectedCount - starterTrackIds.length}</strong><span>你的选择</span></div>
           <i />
-          <div><strong>{shape.bracketSize}</strong><span>随后登场</span></div>
+          <div><strong>{shape.bracketSize}</strong><span>歌曲 16 强</span></div>
           <i />
           <div><strong>{shape.totalMatches}</strong><span>需要 Pick</span></div>
         </div>
-        {shape.qualifierCount > 0 && <p className="draw-note">有些歌曲会稍后登场，直接进入下一轮。</p>}
         {!bracket ? (
-          <button className="button button-primary button-large draw-button" type="button" onClick={generate}>生成这次相遇 ✦</button>
+          <button className="button button-primary button-large draw-button" type="button" onClick={generate}>生成 16 强对阵 ✦</button>
         ) : (
           <div className="draw-id mono">本次旅程编号 · GEM-{bracket.seed.toUpperCase()}</div>
         )}

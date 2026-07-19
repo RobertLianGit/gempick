@@ -86,7 +86,7 @@ export async function createResultImage(input: ResultImageInput) {
   ctx.stroke();
 
   const stats = [
-    [`${input.selectedCount} 首`, "候选歌曲"],
+    [`${input.selectedCount} 首`, "歌曲 16 强"],
     [`${input.choiceCount} 次`, "完成 Pick"],
     [`${input.routeCount} 次`, "被 Pick 次数"],
   ];
