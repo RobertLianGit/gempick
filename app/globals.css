@@ -512,17 +512,13 @@ details.ranking-tier .ranking-tier-title span { margin-left: auto; }
   .result-stats > div:nth-child(2) { border-right: 0; }
   .result-stats > div:nth-child(-n+2) { border-bottom: 1px solid var(--border); }
   .world-cup-section-heading { grid-template-columns: 1fr; gap: 16px; }
-  .world-cup-board { grid-template-columns: 1fr; gap: 24px; padding: 24px; }
-  .world-cup-center { order: -1; padding: 22px 0; }
-  .world-cup-center .world-cup-match { width: min(310px,100%); }
-  .world-cup-region-right > header { flex-direction: row; }
-  .world-cup-region-right .world-cup-lanes { display: flex; flex-direction: column-reverse; }
-  .world-cup-lanes { min-height: 0; display: flex; flex-direction: column; gap: 22px; }
-  .world-cup-lane > p { text-align: left; }
-  .world-cup-round-matches { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); }
-  .world-cup-lane:last-child .world-cup-round-matches { grid-template-columns: 1fr; }
-  .world-cup-region .world-cup-match::before, .world-cup-region .world-cup-match::after { display: none; }
-  .world-cup-entry strong { font-size: 12px; }
+  .world-cup-board { min-height: 660px; grid-template-columns: minmax(0,1fr) 130px minmax(0,1fr); gap: 6px; padding: 20px 8px; }
+  .world-cup-lanes { min-height: 580px; gap: 4px; }
+  .world-cup-entry { grid-template-columns: 9px minmax(0,1fr); padding-inline: 4px; }
+  .world-cup-entry strong { font-size: 8px; }
+  .world-cup-champion { font-size: 18px; }
+  .world-cup-trophy { width: 50px; height: 50px; font-size: 18px; }
+  .world-cup-center .world-cup-entry strong { font-size: 8px; }
 }
 
 @media (max-width: 680px) {
@@ -653,10 +649,23 @@ details.ranking-tier .ranking-tier-title span { margin-left: auto; }
   .world-cup-section { padding-top: 70px; }
   .world-cup-section-heading h2 { font-size: 30px; }
   .world-cup-section-heading > p { font-size: 12px; }
-  .world-cup-board { padding: 18px 12px; border-radius: 22px; }
-  .world-cup-round-matches { gap: 7px; }
-  .world-cup-entry { min-height: 34px; padding: 7px; }
-  .world-cup-entry strong { font-size: 11px; }
+  .world-cup-board { min-height: 650px; grid-template-columns: minmax(0,1fr) 72px minmax(0,1fr); gap: 2px; padding: 14px 3px; border-radius: 22px; }
+  .world-cup-region > header { height: 30px; gap: 4px; font-size: 6px; letter-spacing: .04em; }
+  .world-cup-region > header span { width: 16px; height: 16px; font-size: 6px; }
+  .world-cup-lanes { min-height: 590px; gap: 2px; }
+  .world-cup-lane > p { margin-bottom: 5px; font-size: 6px; }
+  .world-cup-round-matches { gap: 5px; }
+  .world-cup-match { border-radius: 6px; }
+  .world-cup-region-left .world-cup-lane:not(:last-child) .world-cup-match::after,
+  .world-cup-region-right .world-cup-lane:not(:first-child) .world-cup-match::before { width: 3px; }
+  .world-cup-entry { min-height: 28px; grid-template-columns: 5px minmax(0,1fr); gap: 1px; padding: 3px 2px; }
+  .world-cup-entry > span { font-size: 5px; }
+  .world-cup-entry strong { display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; font-size: 6.5px; line-height: 1.25; text-overflow: clip; white-space: normal; }
+  .world-cup-center .eyebrow { margin-bottom: 9px; font-size: 5px; letter-spacing: .05em; }
+  .world-cup-trophy { width: 34px; height: 34px; font-size: 12px; }
+  .world-cup-champion { max-width: 70px; margin-top: 8px; font-size: 12px; }
+  .world-cup-center > span { margin: 4px 0 10px; font-size: 6px; }
+  .world-cup-center .world-cup-entry strong { font-size: 6.5px; }
   .ranking-tracks { grid-template-columns: 1fr; }
   .ranking-tier-title { align-items: flex-start; flex-wrap: wrap; }
   details.ranking-tier .ranking-tier-title span { margin-left: 0; }
