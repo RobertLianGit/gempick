@@ -178,6 +178,17 @@ export function getCompletedMatchCount(bracket: BracketState) {
   return bracket.matches.filter((match) => match.winnerTrackId).length;
 }
 
+export type PickRegion = "星轨 A 区" | "星轨 B 区" | "决赛" | "附加阶段";
+
+export function getMatchRegion(match: TournamentMatch): PickRegion {
+  if (match.stage === "qualifier") return "附加阶段";
+  if (match.roundIndex >= 3) return "决赛";
+
+  // 固定 16 强的每一轮都由左右两个分区各自推进，直到决赛相遇。
+  const matchesPerRegion = 2 ** Math.max(0, 2 - match.roundIndex);
+  return match.orderInRound < matchesPerRegion ? "星轨 A 区" : "星轨 B 区";
+}
+
 export function getChampionTrackId(bracket: BracketState) {
   const finalMatch = bracket.matches.at(-1);
   return finalMatch?.winnerTrackId;

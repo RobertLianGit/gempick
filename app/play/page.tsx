@@ -10,6 +10,7 @@ import {
   decideMatch,
   getCompletedMatchCount,
   getCurrentMatch,
+  getMatchRegion,
   getMatchParticipants,
   undoLastDecision,
 } from "@/src/lib/bracket";
@@ -100,7 +101,7 @@ export default function PlayPage() {
   const roundPosition = sameRound.findIndex((match) => match.id === currentMatch.id) + 1;
   return (
     <div className="page-shell play-page">
-      <ProgressBar current={completed} total={bracket.matches.length} label={`${currentMatch.roundLabel}｜第 ${roundPosition} 次相遇`} />
+      <ProgressBar current={completed} total={bracket.matches.length} label={`${currentMatch.roundLabel} · 第 ${roundPosition} 组`} region={getMatchRegion(currentMatch)} />
       <header className="duel-heading">
         <p className="eyebrow">很难，但还是要 Pick 一首</p>
         <h1>这一轮，你 Pick 哪一首？</h1>

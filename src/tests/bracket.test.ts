@@ -5,6 +5,7 @@ import {
   getChampionTrackId,
   getCurrentMatch,
   getMatchParticipants,
+  getMatchRegion,
   getRankingTiers,
   getRoundLabel,
   getTournamentShape,
@@ -48,6 +49,17 @@ describe("tournament shape", () => {
 
   it("uses World Cup-style labels for the 16-song Pick stage", () => {
     expect([16, 8, 4, 2].map(getRoundLabel)).toEqual(["16 强 Pick", "8 强 Pick", "4 强 Pick", "决赛 Pick"]);
+  });
+
+  it("keeps the two regions separate until the final", () => {
+    const bracket = createBracket(ids(16), "regions", "2026-07-22T00:00:00.000Z");
+    const mainMatches = bracket.matches.filter((match) => match.stage === "main");
+    expect(mainMatches.filter((match) => match.roundIndex === 0).map(getMatchRegion)).toEqual([
+      "星轨 A 区", "星轨 A 区", "星轨 A 区", "星轨 A 区",
+      "星轨 B 区", "星轨 B 区", "星轨 B 区", "星轨 B 区",
+    ]);
+    expect(mainMatches.filter((match) => match.roundIndex === 2).map(getMatchRegion)).toEqual(["星轨 A 区", "星轨 B 区"]);
+    expect(getMatchRegion(mainMatches.at(-1)!)).toBe("决赛");
   });
 });
 

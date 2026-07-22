@@ -3,9 +3,9 @@
 import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
-import { BracketView } from "@/src/components/BracketView";
 import { MusicListenButton } from "@/src/components/MusicPlatformProvider";
 import { NonOfficialNotice } from "@/src/components/NonOfficialNotice";
+import { WorldCupBracket } from "@/src/components/WorldCupBracket";
 import { getTrack } from "@/src/data/catalog";
 import { getChampionRoute, getChampionTrackId, getMatchParticipants, getRankingTiers } from "@/src/lib/bracket";
 import { createResultImage } from "@/src/lib/result-image";
@@ -14,7 +14,6 @@ import { useSavedState } from "@/src/hooks/useSavedState";
 export default function ResultPage() {
   const router = useRouter();
   const { state, hydrated, reset } = useSavedState();
-  const [showBracket, setShowBracket] = useState(false);
   const [resultImageUrl, setResultImageUrl] = useState<string>();
   const [imageState, setImageState] = useState("生成结果图片");
   const bracket = state.bracket;
@@ -77,7 +76,7 @@ export default function ResultPage() {
         <div className="champion-actions">
           <MusicListenButton track={champion} className="button button-gold button-large result-listen-button" title="去听这首歌" note="" />
           <button className="button button-primary button-large" type="button" onClick={generateShareImage} disabled={imageState === "正在生成…"}>{imageState}</button>
-          <button className="button button-secondary" type="button" onClick={() => setShowBracket(!showBracket)}>{showBracket ? "收起完整旅程" : "看看完整旅程"}</button>
+          <a className="button button-secondary" href="#world-cup-bracket">查看 16 强赛果</a>
         </div>
         <NonOfficialNotice compact />
       </section>
@@ -89,6 +88,13 @@ export default function ResultPage() {
           <div><strong>{route.length} 次</strong><span>被 Pick 次数</span></div>
           <div><strong>{finalist?.title ?? "—"}</strong><span>最后一次遇见</span></div>
         </div>
+        <section className="world-cup-section" id="world-cup-bracket">
+          <div className="world-cup-section-heading">
+            <div><p className="eyebrow">完整比赛结果</p><h2>我的歌曲世界杯</h2></div>
+            <p>16 首歌分为两个分区，从 16 强一路 Pick 到决赛。金色星标记录每一次选择，所有路径都只以歌名呈现。</p>
+          </div>
+          <WorldCupBracket bracket={bracket} />
+        </section>
         <section className="ranking-section">
           <div className="ranking-heading">
             <div><p className="eyebrow">只属于你的结果</p><h2>我的邓紫棋歌曲个人排行榜</h2></div>
@@ -141,7 +147,6 @@ export default function ResultPage() {
             ))}
           </div>
         </div>
-        {showBracket && <div className="full-bracket"><BracketView bracket={bracket} /></div>}
         <div className="restart-panel">
           <div><p className="eyebrow">下一次也许会不同</p><h2>Pick 没有标准答案。</h2><p>重新开始后，之前的 Pick 记录会被清除。</p></div>
           <button className="button button-secondary" type="button" onClick={() => {
